@@ -161,3 +161,34 @@ input {
     opacity: 1;
     z-index: 1;
 }
+
+/*account page*/
+
+
+/*homepage*/
+
+
+/*categories page*/
+#games {
+    padding: 30px;
+}
+
+#genre {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+.action {
+    background-color: blue;
+}
+
+.horror {
+    background-color: red;
+}
+
+.strategy {
+    background-color: green;
+}
+
+/*trending page*/
