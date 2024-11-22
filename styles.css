@@ -76,9 +76,9 @@ a {
     text-decoration: none;
 }
 
-main {
+/*main {
     height: 200px;
-}
+}*/
 
 footer {
     text-align: center;
@@ -166,7 +166,13 @@ input {
 
 
 /*homepage*/
-
+#home-games{
+    display:grid;
+    grid-template-columns: repeat(5, 400px);
+    grid-template-rows: repeat(2, 400px);
+    padding: 50px 0 50px 50px;
+    gap: 70px;
+}
 
 /*categories page*/
 #games {
