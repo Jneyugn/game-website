@@ -76,9 +76,9 @@ a {
     text-decoration: none;
 }
 
-main {
+/*main {
     height: 200px;
-}
+}*/
 
 footer {
     text-align: center;
@@ -89,3 +89,112 @@ footer {
 footer a {
     color: red;
 }
+
+/*login/registration page*/
+#register-page {
+    display: flex;
+}
+
+#sign-up {
+    display: block;
+    width: 35%;
+    justify-items: center;
+    float: left;
+    padding-top: 50px;
+}
+
+#register {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+}
+
+input {
+    height: 30px;
+    width: 350px;
+    margin: auto;
+}
+
+#register button {
+    height: 30px;
+    width: 100px;
+    margin: auto;
+    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+}
+
+#login {
+    font-weight: bold;
+}
+
+/*image grid*/
+#img-grid {
+    width: 600px;
+    height: 600px;
+    float: right;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    max-width: 600px;
+}
+  
+.grid {
+    border: 1px solid orange;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%; /* Maintain 1:1 aspect ratio */
+    width: 300px;
+}
+  
+.grid img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+  
+.grid img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/*account page*/
+
+
+/*homepage*/
+#home-games{
+    display:grid;
+    grid-template-columns: repeat(5, 400px);
+    grid-template-rows: repeat(2, 400px);
+    padding: 50px 0 50px 50px;
+    gap: 70px;
+}
+
+/*categories page*/
+#games {
+    padding: 30px;
+}
+
+#genre {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+.action {
+    background-color: blue;
+}
+
+.horror {
+    background-color: red;
+}
+
+.strategy {
+    background-color: green;
+}
+
+/*trending page*/
