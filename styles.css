@@ -1,7 +1,11 @@
 /*generic page styling (header and footer)*/
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: black;
+    background-color: rgb(38, 38, 38);
     color: white;
     margin: 0;
     padding: 0;
@@ -11,49 +15,105 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
-    padding: 0 0 0 30px;
+    padding: 10px 0 10px 30px;
     position: sticky;
-    box-shadow: 0px 5px 10px 1px rgba(255, 255, 255); /*horizontal shadow, vertical shadow, blur radius, spread radius, color and transparency*/
+    z-index: 100;
+    top: 0;
+    background-color: black;
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255); /*horizontal shadow, vertical shadow, blur radius, spread radius, color and transparency*/
 }
 
-h1 {
-    text-shadow: 0px 2px 20px rgb(255, 255, 255) /*horizontal shadow, vertical shadow, blur radius*/
+img#logo {
+    height: 70px;
 }
 
-#navigation {
+/*navigation bar*/
+#navigation-bar {
     display: flex;
     flex-direction: row;
-    gap: 80px;
+    gap: 40px;
     position: absolute;
     right: 0;
     padding-right: 30px;
 }
 
-nav ul {
+#navigation-bar ul {
     text-transform: uppercase;
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
-    gap: 80px;
+    gap: 40px;
 }
 
-li {
-    display: inline;
+/*page navigation*/
+#nav {
+    display: flex;
+    padding: 0;
 }
 
-nav a {
+#nav li {
+    position: relative;
+}
+
+#nav li a {
+    display: block;
     color: white;
+    padding: 15px 20px;
+    text-align: center;
     font-size: 1.5em;
 }
 
-nav a:hover {
+#nav li a:hover {
     text-shadow: 0px 0px 10px rgb(255, 255, 255)
 }
 
-#navigation input {
+/*subnavigation*/
+ul#subnav {
+    display: none;
+}
+
+#subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: black;
+    text-align: left;
+    z-index: 100;
+}
+
+#subnav li {
+    border-top: 1px solid white;
+}
+
+#subnav a {
+    display: block;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+#subnav li a {
+    font-size: 1em;
+}
+
+#subnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+/*subnav hover*/
+#nav li:hover #subnav {
+    display: block;
+}
+
+/*section jump*/
+main section:target {
+    scroll-margin-top: 120px;
+}
+
+/*search bar*/
+#navigation-bar input {
     width: 250px;
 }
 
@@ -61,10 +121,11 @@ input {
     border: 1px solid white;
 }
 
-#navigation button {
+/*login button*/
+#navigation-bar button {
     height: 30px;
     font-size: 1em;
-    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255);
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255);
 }
 
 button a {
@@ -76,10 +137,15 @@ a {
     text-decoration: none;
 }
 
+#account {
+    margin: auto;
+}
+
 /*main {
     height: 200px;
 }*/
 
+/*footer*/
 footer {
     text-align: center;
     padding: 10px;
@@ -88,6 +154,137 @@ footer {
 
 footer a {
     color: red;
+}
+
+/*homepage section content*/
+#games {
+    padding: 30px 20px 30px 20px;
+}
+
+section {
+    padding: 20px;
+}
+
+.genre h2 {
+    width: 250px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    margin-top: 0;
+}
+
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+
+.game-layout {
+    display: flex;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    margin: 0 5px 0 5px;
+    overflow-x: auto;
+}
+
+.game {
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    margin: 0 15px 0 15px;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+#trending h2 {
+    background-color: rgb(123, 123, 123);
+}
+
+#trending .game:hover {
+    border: 1px solid rgb(123, 123, 123);
+    box-shadow: 0px 0px 15px 0px rgb(123, 123, 123);
+}
+
+#action h2 {
+    background-color: rgb(255, 85, 0);
+}
+
+#action .game:hover {
+    border: 1px solid rgb(255, 85, 0);
+    box-shadow: 0px 0px 15px 0px rgb(255, 85, 0);
+}
+
+#horror h2 {
+    background-color: rgb(255, 0, 0);
+}
+
+#horror .game:hover {
+    border: 1px solid rgb(255, 0, 0);
+    box-shadow: 0px 0px 15px 0px rgb(255, 0, 0);
+}
+
+#strategy h2 {
+    background-color: rgb(0, 0, 165);
+}
+
+#strategy .game:hover {
+    border: 1px solid rgb(0, 0, 165);
+    box-shadow: 0px 0px 15px 0px rgb(0, 0, 165);
+}
+
+#adventure h2 {
+    background-color: rgb(0, 128, 0);
+}
+
+#adventure .game:hover {
+    border: 1px solid rgb(0, 128, 0);
+    box-shadow: 0px 0px 15px 0px rgb(0, 128, 0);
+}
+
+#simulation h2 {
+    background-color: rgb(120, 0, 0);
+}
+
+#simulation .game:hover {
+    border: 1px solid rgb(120, 0, 0);
+    box-shadow: 0px 0px 15px 0px rgb(120, 0, 0);
+}
+
+#rpg h2 {
+    background-color: rgb(102, 0, 175);
+}
+
+#rpg .game:hover {
+    border: 1px solid rgb(102, 0, 175);
+    box-shadow: 0px 0px 15px 0px rgb(102, 0, 175);
+}
+
+#recreation h2 {
+    background-color: rgb(0, 0, 255);
+}
+
+#recreation .game:hover {
+    border: 1px solid rgb(0, 0, 255);
+    box-shadow: 0px 0px 15px 0px rgb(0, 0, 255);
+}
+
+/*homepage*/
+#home-games{
+    display:grid;
+    grid-template-columns: repeat(5, 400px);
+    grid-template-rows: repeat(2, 400px);
+    padding: 50px 0 50px 50px;
+    gap: 70px;
 }
 
 /*login/registration page*/
@@ -163,38 +360,5 @@ input {
 }
 
 /*account page*/
-
-
-/*homepage*/
-#home-games{
-    display:grid;
-    grid-template-columns: repeat(5, 400px);
-    grid-template-rows: repeat(2, 400px);
-    padding: 50px 0 50px 50px;
-    gap: 70px;
-}
-
-/*categories page*/
-#games {
-    padding: 30px;
-}
-
-#genre {
-    width: 150px;
-    height: 30px;
-    text-align: center;
-}
-
-.action {
-    background-color: blue;
-}
-
-.horror {
-    background-color: red;
-}
-
-.strategy {
-    background-color: green;
-}
 
 /*trending page*/
