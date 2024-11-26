@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <title>XPExchange</title>
+    <title>XP Exchange</title>
 </head>
 
 <body>
@@ -14,13 +14,23 @@
 
     <!--logo and navigation bar-->
     <header>
-        <h1>XPExchange</h1>
-        <div id="navigation">
+        <img id="logo" class="XP-logo" src="images/XPExchange-Logo.png">
+        <div id="navigation-bar">
             <nav>
-                <ul>
+                <ul id="nav">
                     <li><a href="index.html">Games</a></li>
-                    <li><a href="categories.html">Categories</a></li>
-                    <li><a href="trending.html">Trending</a></li>
+                    <li><a>Categories</a>
+                        <ul id="subnav" class="dropdown">
+                            <li><a href="#trending">Trending</a></li>
+                            <li><a href="#action">Action</a></li>
+                            <li><a href="#horror">Horror</a></li>
+                            <li><a href="#strategy">Strategy</a></li>
+                            <li><a href="#adventure">Adventure</a></li>
+                            <li><a href="#simulation">Simulation</a></li>
+                            <li><a href="#rpg">Role-Playing</a></li>
+                            <li><a href="#recreation">Sports & Racing</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <input type="text" placeholder="SEARCH...">
@@ -30,7 +40,134 @@
         </div>
     </header>
     <!--page content-->
-    <main>
+    <main id="games">
+        <!--trending section-->
+        <section id="trending">
+            <div class="genre">
+                <h2>Trending</h2>
+                <div class="scroll-container">
+                    <div id="trending-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--action games-->
+        <section id="action">
+            <div class="genre">
+                <h2>Action</h2>
+                <div class="scroll-container">
+                    <div id="action-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--horror games-->
+        <section id="horror">
+            <div class="genre">
+                <h2>Horror</h2>
+                <div class="scroll-container">
+                    <div id="horror-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--strategy games-->
+        <section id="strategy">
+            <div class="genre">
+                <h2>Strategy</h2>
+                <div class="scroll-container">
+                    <div id="strategy-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--adventure games-->
+        <section id="adventure">
+            <div class="genre">
+                <h2>Adventure</h2>
+                <div class="scroll-container">
+                    <div id="adventure-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--simulation games-->
+        <section id="simulation">
+            <div class="genre">
+                <h2>Simulation</h2>
+                <div class="scroll-container">
+                    <div id="simulation-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--role-playing-->
+        <section id="rpg">
+            <div class="genre">
+                <h2>Role-Playing</h2>
+                <div class="scroll-container">
+                    <div id="rpg-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--sports & racing-->
+        <section id="recreation">
+            <div class="genre">
+                <h2>Sports & Racing</h2>
+                <div class="scroll-container">
+                    <div id="recreation-games" class="game-layout">
+                        <!--games-->
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                        <div class="game"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div id="home-games">
             <!--display games on homepage in alphabetical order-->
         </div>
