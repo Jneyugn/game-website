@@ -35,6 +35,6 @@ function assignImages(){
     }
 }
 
-setInterval(assignImages, 800);
+setInterval(assignImages, 1000);
 
 
