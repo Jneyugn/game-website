@@ -138,6 +138,16 @@ a {
     margin: auto;
 }
 
+/* game scroll-bar*/
+.game-layout::-webkit-scrollbar {
+    height: 8px;
+}
+
+.game-layout::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
 /*footer*/
 footer {
     text-align: center;
@@ -227,6 +237,7 @@ h3, p {
     transition: all 300ms ease-in-out;
 }
 
+/*trending games*/
 #trending h2 {
     background-color: rgb(123, 123, 123);
 }
@@ -236,6 +247,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(123, 123, 123);
 }
 
+/*scroll bar*/
+#trending-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(123, 123, 123);
+    border-radius: 5px;
+}
+
+#trending-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(123, 123, 123, 0.5);
+}
+
+/*action games*/
 #action h2 {
     background-color: rgb(255, 85, 0);
 }
@@ -245,6 +267,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(255, 85, 0);
 }
 
+/*scroll bar*/
+#action-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(255, 85, 0);
+    border-radius: 5px;
+}
+
+#action-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 85, 0, 0.5);
+}
+
+/*horror games*/
 #horror h2 {
     background-color: rgb(255, 0, 0);
 }
@@ -254,6 +287,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(255, 0, 0);
 }
 
+/*scroll bar*/
+#horror-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 0);
+    border-radius: 5px;
+}
+
+#horror-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+/*strategy games*/
 #strategy h2 {
     background-color: rgb(0, 0, 165);
 }
@@ -263,6 +307,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(0, 0, 165);
 }
 
+/*scroll bar*/
+#strategy-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 165);
+    border-radius: 5px;
+}
+
+#strategy-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 165, 0.5);
+}
+
+/*adventure games*/
 #adventure h2 {
     background-color: rgb(0, 128, 0);
 }
@@ -272,6 +327,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(0, 128, 0);
 }
 
+/*scroll bar*/
+#adventure-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(0, 128, 0);
+    border-radius: 5px;
+}
+
+#adventure-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 128, 0, 0.5);
+}
+
+/*simulation games*/
 #simulation h2 {
     background-color: rgb(120, 0, 0);
 }
@@ -281,6 +347,17 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(120, 0, 0);
 }
 
+/*scroll bar*/
+#simulation-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(120, 0, 0);
+    border-radius: 5px;
+}
+
+#simulation-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(120, 0, 0, 0.5);
+}
+
+/*role-playing games*/
 #rpg h2 {
     background-color: rgb(102, 0, 175);
 }
@@ -290,13 +367,34 @@ h3, p {
     box-shadow: 0px 0px 15px 0px rgb(102, 0, 175);
 }
 
+/*scroll bar*/
+#rpg-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(102, 0, 175);
+    border-radius: 5px;
+}
+
+#rpg-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 0, 175, 0.5);
+}
+
 #recreation h2 {
     background-color: rgb(0, 0, 255);
 }
 
+/*recreational games*/
 #recreation .game:hover {
     border: 1px solid rgb(0, 0, 255);
     box-shadow: 0px 0px 15px 0px rgb(0, 0, 255);
+}
+
+/*scroll bar*/
+#recreation-games.game-layout::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 255);
+    border-radius: 5px;
+}
+
+#recreation-games.game-layout::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 255, 0.5);
 }
 
 /*login/registration page*/
