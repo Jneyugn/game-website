@@ -1,0 +1,61 @@
+#thread-container {
+    width: 60%;
+    margin: 20px auto;
+}
+
+/*main thread*/
+#thread-container .post-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-info h4 {
+    margin: auto 0 0 0;
+}
+
+.post-info h5 {
+    color: lightgray;
+    font-weight: lighter;
+    margin: auto 0 0 0;
+}
+
+/*reply button*/
+button.reply {
+    background: none;
+    color: lightgrey;
+    border: none;
+    padding: 0;
+    font-size: 1em;
+}
+
+button.reply:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255);
+    color: white;
+}
+
+#thread-container h3 {
+    margin: 0;
+}
+
+/*comment section*/
+#reply-thread {
+    width: 90%;
+    margin: 20px 0 0 auto;
+}
+
+textarea#comment {
+    width: 100%;
+}
+
+/*thread comments*/
+#thread-comment {
+    border: 1px solid white;
+    padding: 20px 20px 0 20px;
+    margin:  auto auto 20px 10%;
+}
+
+#thread-comment:last-of-type {
+    margin: auto auto auto 10%;
+}
+

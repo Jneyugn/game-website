@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/game.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');</style>
+    <script src="script.js" defer></script>
+    <title>Game Info</title>
+</head>
+<body>
+    <!--logo and navigation bar-->
+    <header>
+        <a href="index.html"><img id="logo" class="XP-logo" src="images/XPExchange-Logo.png"></a>
+        <div id="navigation-bar">
+            <nav>
+                <ul id="nav">
+                    <li><a href="index.html">Games</a></li>
+                    <li><a>Categories</a>
+                        <ul id="subnav" class="dropdown">
+                            <li><a href="index.html#trending">Trending</a></li>
+                            <li><a href="index.html#action">Action</a></li>
+                            <li><a href="index.html#horror">Horror</a></li>
+                            <li><a href="index.html#strategy">Strategy</a></li>
+                            <li><a href="index.html#adventure">Adventure</a></li>
+                            <li><a href="index.html#simulation">Simulation</a></li>
+                            <li><a href="index.html#rpg">Role-Playing</a></li>
+                            <li><a href="index.html#recreation">Sports & Racing</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <input type="text" placeholder="SEARCH...">
+            <div id="account">
+                <button><a href="login.html">Login</a></button>
+            </div>
+        </div>
+    </header>
+    <!--page content-->
+    <main id="game-thread">
+        <!--discussion board-->
+        <div id="discussion">
+            <div id="no-discussion">
+                <h3 id="no-threads">There are no discussions yet for this game.</h3>
+                <button id="create-thread">Create Thread</button>
+            </div>
+            <!--create thread-->
+            <div id="write-thread">
+                <h3>Create Thread</h3>
+                <input type="text" id="thread-title" placeholder="Title" required>
+                <textarea id="thread-content" rows="10" placeholder="Write your content here" required></textarea>
+            </div>
+            <!--discussion threads-->
+            <div id="threads">
+                <div class="thread">
+                    <h4 class="username">Username</h4>
+                    <p class="user-thread">
+                        Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                        Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
+                        Iaculis phasellus neque varius bibendum sit curae. 
+                        Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
+                    </p>
+                    <a href="thread.html" class="view-reply">View/Reply</a>
+                </div>
+                <div class="thread">
+                    <h4 class="username"></h4>
+                    <p class="user-thread"></p>
+                    <a href="thread.html" class="view-reply">View/Reply</a>
+                </div>
+            </div>
+        </div>
+        <!--about game-->
+        <div id="game-content">
+            <img src="" alt="Game cover">
+            <div id="game-meta">
+                <div id="rating">
+                    <p>Rating</p>
+                    <!--display game rating-->
+                    <span data-value="1">&#9733;</span>
+                    <span data-value="2">&#9733;</span>
+                    <span data-value="3">&#9733;</span>
+                    <span data-value="4">&#9733;</span>
+                    <span data-value="5">&#9733;</span>
+                </div>
+                <!--game name-->
+                <h2 class="game-name">Game name</h2>
+                <!--game description-->
+                <p class="game-description">
+                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
+                    Iaculis phasellus neque varius bibendum sit curae. 
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
+                    Finibus primis placerat ornare eleifend; ipsum hac diam. 
+                    Tortor eget adipiscing cursus tortor dis cras pulvinar.
+                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
+                    Iaculis phasellus neque varius bibendum sit curae. 
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
+                    Finibus primis placerat ornare eleifend; ipsum hac diam. 
+                    Tortor eget adipiscing cursus tortor dis cras pulvinar.
+                </p>
+            </div>
+            <!--user game rating-->
+            <div id="user-rating">
+                <p>How would you rate this game?</p>
+                <span data-value="1" class="star">&#9733;</span>
+                <span data-value="2" class="star">&#9733;</span>
+                <span data-value="3" class="star">&#9733;</span>
+                <span data-value="4" class="star">&#9733;</span>
+                <span data-value="5" class="star">&#9733;</span>
+            </div>
+        </div>
+    </main>
+    <!--footer-->
+    <footer>
+        <p>2024 Fundamentals of JavaScript</p>
+        <p>&copy; Nha Ngoc Jenny Nguyen, Anupa Ragoonanan, Joseph Nahas & Alaa Attia</p>
+        <a id="delete-account" href="#">Delete account</a>
+    </footer>
+</body>
+</html>
