@@ -325,6 +325,18 @@ h3, p {
     margin: auto;
 }
 
+#register span{
+    height: 5px;
+    margin: -15px auto 10px auto;
+    color: red;
+}
+
+#account-msg{
+    height: 5px;
+    margin-left: 20px;
+    color: red;
+}
+
 #register button {
     height: 30px;
     width: 100px;

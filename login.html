@@ -14,15 +14,16 @@
     <div id="sign-up">
         <h1>Create an account</h1>
         <form id="register">
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Last name">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button><a href="index.html">Sign In</a></button>
+            <input type="text" id="first-name" placeholder="First name"><span id="firstname-msg"></span>
+            <input type="text" id="last-name" placeholder="Last name"><span id="lastname-msg"></span>
+            <input type="email" id="email" placeholder="Email"><span id="email-msg"></span>
+            <input type="text" id="username" placeholder="Username"><span id="username-msg"></span>
+            <input type="password" id="password" placeholder="Password"><span id="password-msg"></span>
+            <button id="sign-in"><a href="index.html">Sign In</a></button>
         </form>
         <!--implement the login through JS-->
         <p>Already have an account? <a id="login" href="#">Login</a></p>
+        <p id="account-msg"></p>
     </div>
     <!--image grid display-->
     <div id="img-grid">
