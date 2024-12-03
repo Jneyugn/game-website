@@ -35,7 +35,7 @@ function assignImages(){
     }
 }
 
-setInterval(assignImages, 800);
+setInterval(assignImages, 1000);
 
 class Account {
     constructor(firstName, lastName, email, username, password){
