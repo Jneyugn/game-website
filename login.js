@@ -54,15 +54,24 @@ let email = document.getElementById('email');
 let username = document.getElementById('username');
 let password = document.getElementById('password');
 let signinButton = document.getElementById('sign-in');
+let loginButton = document.getElementById('login');
 let firstnameMessage = document.getElementById('firstname-msg');
 let lastnameMessage = document.getElementById('lastname-msg');
 let emailMessage = document.getElementById('email-msg');
 let usernameMessage = document.getElementById('username-msg');
 let passwordMessage = document.getElementById('password-msg');
 let accountMessage = document.getElementById('account-msg');
+let accountQuestion = document.getElementById('account-question');
+let signUpDiv = document.getElementById('sign-up');
+let accountPrompt = document.getElementById('account-prompt');
+let homeButton = document.getElementById('home');
 
-signinButton.addEventListener('click', function(event) {
+homeButton.addEventListener('click', function(event){
+    event.preventDefault();
+    window.location.replace('index.html');
+})
 
+var signUp = function(event){
     event.preventDefault();
 
     if (localStorage.getItem('userAccount') != null){
@@ -88,9 +97,12 @@ signinButton.addEventListener('click', function(event) {
         var userAccount = new Account (firstName.value, lastName.value, email.value, username.value, password.value);
         var userAccountStringified = JSON.stringify(userAccount);
         localStorage.setItem('userAccount', userAccountStringified);
+        localStorage.setItem('signedIn', 'true');
         window.location.replace('index.html');
     }
-});
+}
+
+signinButton.addEventListener('click', signUp);
 
 form.addEventListener('click', function(event){
     if (event.target.tagName === 'INPUT'){
@@ -114,5 +126,37 @@ form.addEventListener('click', function(event){
         }
     }
 });
+
+window.addEventListener('load', function(){
+    if (localStorage.getItem('userAccount')){
+        form.removeChild(firstName);
+        form.removeChild(firstnameMessage);
+        form.removeChild(lastName);
+        form.removeChild(lastnameMessage);
+        form.removeChild(email);
+        form.removeChild(emailMessage);
+        accountPrompt.innerHTML = 'Sign in to your account';
+        accountMessage.innerHTML = '';
+        username.value = '';
+        password.value = '';
+        signinButton.innerHTML = 'Sign In';
+        signinButton.removeEventListener('click', signUp);
+        let accountObject = JSON.parse(localStorage.getItem('userAccount'));
+        signinButton.addEventListener('click', function(event){
+            event.preventDefault();
+            if (username.value == '' || username.value.trim().length == 0){
+                usernameMessage.innerHTML = 'This field is required!';
+            } else if (password.value == '' || password.value.trim().length == 0){
+                passwordMessage.innerHTML = 'This field is required!';
+            } else if (username.value != accountObject.username || password.value != accountObject.password){
+                accountMessage.innerHTML = "Username or password incorrect!";
+            } else {
+                localStorage.setItem('signedIn', 'true');
+                window.location.replace('index.html');
+            }
+        });
+    }
+})
+
 
 

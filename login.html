@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
     <script src="login.js" defer></script>
     <title>XPExchange Sign in</title>
 </head>
@@ -13,17 +15,17 @@
 <body id="register-page">
     <!--Create an account-->
     <div id="sign-up">
-        <h1>Create an account</h1>
+        <h1 id="account-prompt">Create an account</h1>
         <form id="register">
             <input type="text" id="first-name" placeholder="First name"><span id="firstname-msg"></span>
             <input type="text" id="last-name" placeholder="Last name"><span id="lastname-msg"></span>
             <input type="email" id="email" placeholder="Email"><span id="email-msg"></span>
             <input type="text" id="username" placeholder="Username"><span id="username-msg"></span>
             <input type="password" id="password" placeholder="Password"><span id="password-msg"></span>
-            <button id="sign-in"><a href="index.html">Sign In</a></button>
+            <button id="sign-in">Sign Up</button>
+            <button id="home">Home</button>
         </form>
         <!--implement the login through JS-->
-        <p>Already have an account? <a id="login" href="#">Login</a></p>
         <p id="account-msg"></p>
     </div>
     <!--image grid display-->
