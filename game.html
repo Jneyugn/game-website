@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/game.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');</style>
-    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <script type="module" src="js/game.js" defer></script>
+    <script src="js/account.js" defer></script>
     <title>Game Info</title>
 </head>
+
 <body>
     <!--logo and navigation bar-->
     <header>
@@ -33,7 +38,7 @@
             </nav>
             <input type="text" placeholder="SEARCH...">
             <div id="account">
-                <button><a href="login.html">Login</a></button>
+                <button id="logging-btn">Create Account</button>
             </div>
         </div>
     </header>
@@ -56,10 +61,10 @@
                 <div class="thread">
                     <h4 class="username">Username</h4>
                     <p class="user-thread">
-                        Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                        Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                        Iaculis phasellus neque varius bibendum sit curae. 
-                        Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
+                        Lorem ipsum odor amet, consectetuer adipiscing elit.
+                        Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                        Iaculis phasellus neque varius bibendum sit curae.
+                        Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
                     </p>
                     <a href="thread.html" class="view-reply">View/Reply</a>
                 </div>
@@ -72,32 +77,32 @@
         </div>
         <!--about game-->
         <div id="game-content">
-            <img src="" alt="Game cover">
+            <img id="game-image" src="" alt="Game cover">
             <div id="game-meta">
                 <div id="rating">
                     <p>Rating</p>
                     <!--display game rating-->
-                    <span data-value="1">&#9733;</span>
-                    <span data-value="2">&#9733;</span>
-                    <span data-value="3">&#9733;</span>
-                    <span data-value="4">&#9733;</span>
-                    <span data-value="5">&#9733;</span>
+                    <span data-value=1>&#9733;</span>
+                    <span data-value=2>&#9733;</span>
+                    <span data-value=3>&#9733;</span>
+                    <span data-value=4>&#9733;</span>
+                    <span data-value=5>&#9733;</span>
                 </div>
                 <!--game name-->
-                <h2 class="game-name">Game name</h2>
+                <h2 id="game-name" class="game-name">Game name</h2>
                 <!--game description-->
-                <p class="game-description">
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                    Iaculis phasellus neque varius bibendum sit curae. 
-                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
-                    Finibus primis placerat ornare eleifend; ipsum hac diam. 
+                <p id="game-description" class="game-description">
+                    Lorem ipsum odor amet, consectetuer adipiscing elit.
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                    Iaculis phasellus neque varius bibendum sit curae.
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
+                    Finibus primis placerat ornare eleifend; ipsum hac diam.
                     Tortor eget adipiscing cursus tortor dis cras pulvinar.
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                    Iaculis phasellus neque varius bibendum sit curae. 
-                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
-                    Finibus primis placerat ornare eleifend; ipsum hac diam. 
+                    Lorem ipsum odor amet, consectetuer adipiscing elit.
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                    Iaculis phasellus neque varius bibendum sit curae.
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
+                    Finibus primis placerat ornare eleifend; ipsum hac diam.
                     Tortor eget adipiscing cursus tortor dis cras pulvinar.
                 </p>
             </div>
@@ -119,4 +124,5 @@
         <a id="delete-account" href="#">Delete account</a>
     </footer>
 </body>
+
 </html>
