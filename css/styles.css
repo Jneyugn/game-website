@@ -1,0 +1,204 @@
+/*generic page styling*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Exo", serif;
+    background-color: rgb(38, 38, 38);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0 10px 30px;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    background-color: black;
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255); /*horizontal shadow, vertical shadow, blur radius, spread radius, color and transparency*/
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    padding: 20px;
+}
+
+img#logo {
+    height: 70px;
+}
+
+/*navigation bar*/
+#navigation-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    position: absolute;
+    right: 0;
+    padding-right: 30px;
+}
+
+#navigation-bar ul {
+    text-transform: uppercase;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/*page navigation*/
+#nav {
+    display: flex;
+    padding: 0;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#nav li a:hover {
+    text-shadow: 0px 0px 10px rgb(255, 255, 255)
+}
+
+/*subnavigation*/
+ul#subnav {
+    display: none;
+}
+
+#subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: black;
+    text-align: left;
+    z-index: 3;
+}
+
+#subnav li {
+    border-top: 1px solid white;
+}
+
+#subnav a {
+    display: block;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+#subnav li a {
+    font-size: 1em;
+}
+
+#subnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+/*subnav hover*/
+#nav li:hover #subnav {
+    display: block;
+}
+
+/*section jump*/
+main section:target {
+    scroll-margin-top: 120px;
+}
+
+/*search bar*/
+#navigation-bar input {
+    width: 350px;
+    height: 30px;
+    border: 1px solid white;
+    margin: auto;
+}
+
+/*login button*/
+#navigation-bar button {
+    height: 30px;
+    font-size: 1em;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255);
+}
+
+button a {
+    color: black;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+#account {
+    margin: auto;
+}
+
+/*footer*/
+footer {
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px -5px 10px 1px rgb(255, 255, 255);
+}
+
+footer a {
+    color: red;
+}
+
+/*responsive tablet sizing*/
+@media (max-width: 1010px) {
+    /*general styling*/
+    header {
+        padding: 10px 0 10px 20px;
+    }
+
+    #navigation-bar {
+        gap: 0;
+    }
+
+    #navigation-bar ul#nav {
+        gap: 0;
+        font-size: .80em;
+    }
+
+    #navigation-bar input {
+        width: 180px;
+        margin: auto 20px ;
+    }
+}
+
+/*reponsive mobile styling*/
+@media (max-width: 710px) {
+    /*general styling*/
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    header img#logo {
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    #navigation-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+    }
+}
