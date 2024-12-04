@@ -85,7 +85,7 @@ a.view-reply:hover {
 
 #game-content img {
     height: 300px;
-    width: 300px;
+    width: 100%;
 }
 
 #game-content p {
