@@ -1,12 +1,5 @@
-
-class Game {
-    constructor(title, image, genre, rating){
-        this.title = title;
-        this.image = image;
-        this.genre = genre;
-        this.rating = rating;
-    }
-}
+import { Game } from "./classes.js";
+import { Post } from "./classes.js";
 
 // -------------------- Populate home page with games -------------------------------- 
 
@@ -144,38 +137,16 @@ RenderGames(simGamesDivChildren, simGames);
 RenderGames(rpgGamesDivChildren, rpgGames);
 RenderGames(sportsRacingGamesDivChildren, sportsRacingGames);
 
-let deleteButton = document.getElementById('delete-account');
-deleteButton.addEventListener('click', function(event){
-    event.preventDefault();
-    if (localStorage.getItem('userAccount'))
-        localStorage.removeItem('userAccount');
-        loggingButton.innerHTML = 'Create Account';
-        loggingButton.removeEventListener('click', signOut);
-        loggingButton.addEventListener('click', loginPage);
-});
-
-let loggingButton = document.getElementById('logging-btn'); 
-var loginPage = function(event){
-    event.preventDefault();
-    window.location.replace('login.html');
+let allGames = trendingGames.concat(actionGames, horrorGames, strategyGames, adventureGames, simGames, rpgGames, sportsRacingGames);
+let gameDivs = document.getElementsByClassName('game');
+function storeClickedGame(game){
+    let gameTitle = game.getElementsByTagName('H3')[0].innerHTML;
+    let gameClicked = allGames.find((gameObject) => gameObject.title == gameTitle);
+    let gameToStore = JSON.stringify(gameClicked);
+    localStorage.setItem('storedGame', gameToStore);
+    window.location.replace('game.html');
 }
-var signOut = function(event){
-    event.preventDefault();
-    loggingButton.innerHTML = 'Sign In';
-    localStorage.setItem('signedIn', 'false');
-    loggingButton.removeEventListener('click', signOut);
-    loggingButton.addEventListener('click', loginPage);
+for (var i = 0; i < gameDivs.length; i++){
+    let game = gameDivs[i];
+    game.addEventListener('click', () => { storeClickedGame(game)});
 }
-loggingButton.addEventListener('click', loginPage);
-window.addEventListener('load', function(){
-    if (localStorage.getItem('userAccount') && localStorage.getItem('signedIn') == 'true'){
-        console.log('hello');
-        loggingButton.innerHTML = 'Sign Out';
-        loggingButton.removeEventListener('click', loginPage);
-        loggingButton.addEventListener('click', signOut);
-    } else if (localStorage.getItem('userAccount') && localStorage.getItem('signedIn') == 'false'){
-        loggingButton.innerHTML = 'Sign In';
-        loggingButton.removeEventListener('click', signOut);
-        loggingButton.addEventListener('click', loginPage);
-    }
-});

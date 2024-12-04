@@ -1,3 +1,5 @@
+import { Account } from "./classes.js";
+
 let imageGrid = document.getElementById('img-grid');
 let gridImages = imageGrid.getElementsByTagName('IMG');
 
@@ -9,7 +11,7 @@ function assignImages(){
 
     let usedImages = [];
 
-    for (image of gridImages){
+    for (let image of gridImages){
 
         if (image.classList != 'active'){
 
@@ -37,16 +39,6 @@ function assignImages(){
 
 setInterval(assignImages, 1000);
 
-class Account {
-    constructor(firstName, lastName, email, username, password){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-}
-
 let form = document.getElementById('register');
 let firstName = document.getElementById('first-name');
 let lastName = document.getElementById('last-name');
@@ -54,15 +46,12 @@ let email = document.getElementById('email');
 let username = document.getElementById('username');
 let password = document.getElementById('password');
 let signinButton = document.getElementById('sign-in');
-let loginButton = document.getElementById('login');
 let firstnameMessage = document.getElementById('firstname-msg');
 let lastnameMessage = document.getElementById('lastname-msg');
 let emailMessage = document.getElementById('email-msg');
 let usernameMessage = document.getElementById('username-msg');
 let passwordMessage = document.getElementById('password-msg');
 let accountMessage = document.getElementById('account-msg');
-let accountQuestion = document.getElementById('account-question');
-let signUpDiv = document.getElementById('sign-up');
 let accountPrompt = document.getElementById('account-prompt');
 let homeButton = document.getElementById('home');
 
