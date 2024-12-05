@@ -1,9 +1,10 @@
 export class Game {
-    constructor(title, image, genre, rating){
+    constructor(title, image, genre, rating, description){
         this.title = title;
         this.image = image;
         this.genre = genre;
         this.rating = rating;
+        this.description = description;
     }
 }
 

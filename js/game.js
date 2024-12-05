@@ -20,3 +20,6 @@ for (const gameStar of gameStars){
         gameStar.removeAttribute('hidden');
     }
 }
+
+let gameDescription = document.getElementById('game-description');
+gameDescription.innerHTML = gameToDisplay.description;
