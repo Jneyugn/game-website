@@ -73,14 +73,14 @@ if (gameToDisplay.posts.length > 0){
 createButton.addEventListener('click', function(event){
     event.preventDefault();
     if (!threadForm.getAttribute('style')){
-        if (localStorage.getItem('signedIn') == 'true')
+        if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true')
             threadForm.style.display = 'flex';
         else{
             console.log('nope');
             accountWarning.innerHTML = "You need to be signed in to create a thread."
         }
     } else if (threadForm.style.display === 'none') { 
-        if (localStorage.getItem('signedIn') == 'true' ){
+        if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true' ){
             threadForm.style.display = 'flex';
         } else{
             console.log('nope');
