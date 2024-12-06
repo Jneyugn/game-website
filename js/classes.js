@@ -6,6 +6,12 @@ export class Game {
         this.rating = rating;
         this.description = description;
     }
+
+    posts = [];
+
+    createPost(post){
+        this.posts.push(post);
+    }
 }
 
 export class Account {
@@ -19,8 +25,9 @@ export class Account {
 }
 
 export class Post{
-    constructor(title, body){
-        this.title = title;
+    constructor(username, editable, body){
+        this.username = username
+        this.editable = editable;
         this.body = body;
     }
 }

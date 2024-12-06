@@ -48,17 +48,16 @@
         <div id="discussion">
             <div id="no-discussion">
                 <h3 id="no-threads">There are no discussions yet for this game.</h3>
-                <button id="create-thread">Create Thread</button>
+                <button id="create-thread">Create Thread</button><span id="account-warning"></span>
             </div>
             <!--create thread-->
             <div id="write-thread">
-                <h3>Create Thread</h3>
-                <input type="text" id="thread-title" placeholder="Title" required>
                 <textarea id="thread-content" rows="10" placeholder="Write your content here" required></textarea>
+                <button id="submit-form">Post</button>
             </div>
             <!--discussion threads-->
             <div id="threads">
-                <div class="thread">
+                <div class="thread" id="placeHolderThread">
                     <h4 class="username">Username</h4>
                     <p class="user-thread">
                         Lorem ipsum odor amet, consectetuer adipiscing elit.
@@ -66,11 +65,6 @@
                         Iaculis phasellus neque varius bibendum sit curae.
                         Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
                     </p>
-                    <a href="thread.html" class="view-reply">View/Reply</a>
-                </div>
-                <div class="thread">
-                    <h4 class="username"></h4>
-                    <p class="user-thread"></p>
                     <a href="thread.html" class="view-reply">View/Reply</a>
                 </div>
             </div>

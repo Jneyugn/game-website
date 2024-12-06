@@ -23,7 +23,6 @@ var signOut = function(event){
 loggingButton.addEventListener('click', loginPage);
 window.addEventListener('load', function(){
     if (localStorage.getItem('userAccount') && localStorage.getItem('signedIn') == 'true'){
-        console.log('hello');
         loggingButton.innerHTML = 'Sign Out';
         loggingButton.removeEventListener('click', loginPage);
         loggingButton.addEventListener('click', signOut);

@@ -17,6 +17,15 @@ let trendingGames = [wukong, callofduty, diablo4, counterstrike2, dota2, baldurG
 let trendingGamesDiv = document.getElementById('trending-games');
 let trendingGamesDivChildren = trendingGamesDiv.getElementsByTagName('DIV');
 
+let diablo4Review = new Post('RandomUsername', false,'Unfortunately, the creators of Diablo IV decided to take the lazy route with using level scaling. This makes leveling up feel meaningless and legendary gear spam is dull. All monsters are about equally challenging and you lose the fun and excitement of going into an area with deadly monsters... Instead there is a sort of difficulty changing systems which is arcadish and lame.');
+diablo4.createPost(diablo4Review);
+let wukongReview = new Post('RandomUsername', false, 'Serious game of the year contender. Outstanding visuals, packed with mechanics, keeps attention from start to finish. Very amazing art direction and story telling, never read Journey to the west by the way, so it was compelling even for someone who does not know what the story is about.');
+wukong.createPost(wukongReview);
+let codReview = new Post('RandomUsername', false, "Loved the Campaign, have a love/hate relationship with Multiplayer (especially if I'm grinding camos), and I have really enjoyed zombies so far.");
+callofduty.createPost(codReview);
+let bg3Review = new Post('RandomUsername', false, "Great game! This is an immersive game, covering a wide-array of classic D&D genres/locations, and mythos! This is, by far, one of the best games I've ever played!");
+baldurGate3.createPost(bg3Review);
+
 // Action
 let warframe = new Game('Warframe', 'images/games/warframe.jpg', 'Action', 3, "Confront warring factions throughout a sprawling interplanetary system as you follow the guidance of the mysterious Lotus and level up your Warframe, build an Arsenal of destructive firepower, and realize your true potential across massive open worlds in this thrilling, genre-defining third-person combat experience.");
 let eldenRing = new Game('Elden Ring', 'images/games/eldenring.jpg', 'Action', 5, "The critically acclaimed fantasy action RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.");
@@ -30,6 +39,13 @@ let pubg = new Game('PUBG', 'images/games/pubg.jpg', 'Action', 3, "Play PUBG: BA
 let actionGames = [warframe, eldenRing, readyornot, apexLegends, remnant2, helldivers2, onceHuman, pubg];
 let actionGamesDiv = document.getElementById('action-games');
 let actionGamesDivChildren = actionGamesDiv.getElementsByTagName('DIV');
+
+let eldenRingReview = new Post('RandomUsername', false, "I really do think this is one of the best games ever made, and it's only gotten better with time. Is it perfect? No, nothing is. While it has countless flaws, its an absolute masterpiece.");
+eldenRing.createPost(eldenRingReview);
+let readyReview = new Post('RandomUsername', false, "Game is so realistic... Sometimes very eerie to play.. Such a great game, I highly recommend it! Along with the DLC!");
+readyornot.createPost(readyReview);
+let onceHumanReview = new Post('RandomUsername', false, "Fun survival game if you like a bit of sci-fi/scp mix in. love the game and i recommend it to any survival game lover!! Plus game is free to play and not pay to win!!");
+onceHuman.createPost(onceHumanReview);
 
 // Horror
 let sonsoftheforest = new Game('Sons of the Forest', 'images/games/sonsoftheforest.jpg', 'Horror', 3, "Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.");
@@ -45,6 +61,13 @@ let horrorGames = [sonsoftheforest, vRising, deadbydaylight, phasmophobia, letha
 let horrorGamesDiv = document.getElementById('horror-games');
 let horrorGamesDivChildren = horrorGamesDiv.getElementsByTagName('DIV');
 
+let deadReview = new Post('RandomUsername', false, "A really fun PvP horror game, especially if you’re a fan of the genre. The only catch is that unlocking all the perks and characters takes a serious time commitment. It’s definitely a grind, and it can get a bit overwhelming, but if you’re willing to put the time in, it’s totally worth it.");
+deadbydaylight.createPost(deadReview);
+let lethalReview = new Post('RandomUsername', false, "Best coop-horror game i've ever played, its very fun if you play with friends. also the graphics are very cool");
+lethalCompany.createPost(lethalReview);
+let untilDawnReview = new Post('RandomUsername', false, "Until Dawn is an absolute masterpiece. From the moment the game starts, it sucks you in with its creepy atmosphere and insane attention to detail. The graphics are top-notch, and the facial animations are so good that you feel like you're watching an intense horror movie.");
+untilDawn.createPost(untilDawnReview);
+
 // Strategy
 let heartsofiron4 = new Game('Hearts of Iron 4', 'images/games/heartsofiron4.jpg', 'Strategy', 4, "Victory is at your fingertips! Your ability to lead your nation is your supreme weapon, the strategy game Hearts of Iron IV lets you take command of any nation in World War II; the most engaging conflict in world history.");
 let bloonstd6 = new Game('Bloonstd 6', 'images/games/bloonstd6.jpg', 'Strategy', 2, "The Bloons are back and better than ever! Get ready for a massive 3D tower defense game designed to give you hours and hours of the best strategy gaming available.");
@@ -58,6 +81,13 @@ let civ5 = new Game('Civilisation 5', 'images/games/civ5.jpg', 'Strategy', 4, "B
 let strategyGames = [heartsofiron4, bloonstd6, ageofempires2, kingdomtwocrowns, stellaris, europaunversalis4, totalwar3, civ5];
 let strategyGamesDiv = document.getElementById('strategy-games');
 let strategyGamesDivChildren = strategyGamesDiv.getElementsByTagName('DIV');
+
+let heartsReview = new Post('RandomUsername', false, "Playing this game feels like rewriting history. It’s like a history simulator where you can test any wild scenario you can imagine. For example, you can choose France, become Fascist, ally with Germany, and relive World War II with a completely new outcome!");
+heartsofiron4.createPost(heartsReview);
+let stellarisReview = new Post('RandomUsername', false, "I've been playing 4X games for 30 years starting with the original Master of Orion. The variability in each game and the evolving updates just make this one of the best 4X games ever made. Such a fun, great game.");
+stellaris.createPost(stellarisReview);
+let totalWarReview = new Post('RandomUsername', false, "This may be the greatest game of all time: a slightly wonky improvement on TW:WH2 with an expanded universe, a real appreciation for the lore and great potential. ");
+totalwar3.createPost(totalWarReview);
 
 // Adventure
 let uncharted = new Game('Uncharted', 'images/games/uncharted.jpg', 'Adventure', 4, "Play as Nathan Drake and Chloe Frazer in their own standalone adventures as they confront their pasts and forge their own legacies. ");
@@ -73,6 +103,13 @@ let adventureGames = [uncharted, monsterHunter, gta5, newWorld, ghostoftsushima,
 let adventureGamesDiv = document.getElementById('adventure-games');
 let adventureGamesDivChildren = adventureGamesDiv.getElementsByTagName('DIV');
 
+let UnchartedReview = new Post('RandomUsername', false, "The game is one of the most beautiful and well rendered things I have ever played. I wish I had a better PC to run this thing on its highest settings, but even when put lower, it shines. I played through the entire game and its standalone DLC, and I give it a solid 9/10.");
+uncharted.createPost(UnchartedReview);
+let NewWorldReview = new Post('RandomUsername', false, "was fun when it came out, first game of its kind with immersive mmo feel plus the crafting and gathering skills. the game has never felt the same after countless attempts to 'revive' it.");
+newWorld.createPost(NewWorldReview);
+let DescendantReview = new Post('RandomUsername', false, "Monotonous and grindy, this game will have you doing the same 3 things over and over again forever. The activities aren't fun and the rewards aren't worth it.");
+theFirstDescendant.createPost(DescendantReview);
+
 // Simulation
 let stardewValley = new Game('Stardew Valley', 'images/games/stardewvalley.jpg', 'Simulation', 5, "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?");
 let powerwash = new Game('Power Wash Simulator', 'images/games/powerwash.jpg', 'Simulation', 4, "Release the Pressure with PowerWash Simulator! Wash away your worries with the soothing sounds of high-pressure water. Fire up your power washer and blast away every speck of dirt and grime you can find, all with the simple satisfaction of power-washing to a sparkling finish.");
@@ -86,6 +123,13 @@ let sims4 = new Game('The Sims 4', 'images/games/sims4.jpg', 'Simulation', 3, "P
 let simGames = [stardewValley, powerwash, garrysmod, worldofwarships, eurotruck2, farming25, dayZ, sims4];
 let simGamesDiv = document.getElementById('simulation-games');
 let simGamesDivChildren = simGamesDiv.getElementsByTagName('DIV');
+
+let stardewReview = new Post('RandomUsername', false, "This is the perfect slow and cozy game with the right amount of excitement. You can take it slow and build your farm and then gradually incorporate missions, towns folk relationships and journeys. It's easy to play this game for hours on end and watch your empire grow.");
+stardewValley.createPost(stardewReview);
+let eurotruckReview = new Post('RandomUsername', false, "this game is awesome! deserved all the money i paid! i recommend if you like driving and great graphics, great roads, interior, everything is great!");
+eurotruck2.createPost(eurotruckReview);
+let dayZReview = new Post('RandomUsername', false, "Playing on official server is a struggle, it's infested with cheaters. Sad, the game would be great if not that");
+dayZ.createPost(dayZReview);
 
 // Role-playing
 let metaphor = new Game('Metaphor', 'images/games/metaphor.jpg', 'RPG', 5, "The throne sits empty after the king’s assassination. With no heirs, the will of the late king decrees that the next monarch will be elected by the people, & thus begins your fight for the throne..");
@@ -101,6 +145,13 @@ let rpgGames = [metaphor, finalfantasy7, dyingLight2, blackDesert, dragonAge, Ac
 let rpgGamesDiv = document.getElementById('rpg-games');
 let rpgGamesDivChildren = rpgGamesDiv.getElementsByTagName('DIV');
 
+let dyingLightReview = new Post('RandomUsername', false, "Dying Light 2 is an absolutely thrilling open-world survival game that takes everything fans loved about the first title and amplifies it to new heights. From the moment you step into the shoes of Aiden Caldwell, the game's protagonist, you’re instantly immersed in a world brimming with danger, choices, and breathtaking freedom.");
+dyingLight2.createPost(dyingLightReview);
+let valhallaReview = new Post('RandomUsername', false, "Assassin's Creed Valhalla offers an immersive experience with its rich storyline and extensive playtime. The graphics are stunning, bringing the Viking world to life in incredible detail.");
+AcValhalla.createPost(valhallaReview);
+let poeReview = new Post('RandomUsername', false, "most enjoyable. reminds me of older games I used to play but has a nice enhanced play-style.");
+pathofexile.createPost(poeReview);
+
 // Sports/Racing
 let nba2k25 = new Game('NBA 2k25', 'images/games/nba.jpg', 'Sports/Racing', 3, "Command every court with authenticity and realism Powered by ProPLAY™, giving you ultimate control over how you play in NBA 2K25. Define your legacy in MyCAREER, MyTEAM, MyNBA, and The W.");
 let footballManager = new Game('Football Manager', 'images/games/footballmanager.jpg', 'Sports/Racing', 2, "Welcome to a new era of football management. Create iconic moments in your own football universe where only you define your destiny.");
@@ -114,6 +165,13 @@ let golf = new Game('Golf with your Friends', 'images/games/golf.jpg', 'Sports/R
 let sportsRacingGames = [nba2k25, footballManager, forzaHorizon5, carXstreet, fishingPlanet, assettoCorsa, need4speed, golf];
 let sportsRacingGamesDiv = document.getElementById('recreation-games');
 let sportsRacingGamesDivChildren = sportsRacingGamesDiv.getElementsByTagName('DIV');
+
+let nbaReview = new Post('RandomUsername', false, "horrible optimization, frequent crashes and freezes with tons of technical issues, how do you guys manage to make the same game ever year, but it gets worse every year? Would not suggest buying at full price at all.");
+nba2k25.createPost(nbaReview);
+let forzaReview = new Post('RandomUsername', false, "For me it has to be the visuals in this game, the cars are great but when you turn up the settings to Ultra....going for a drive in any car in this game seems perfect!");
+forzaHorizon5.createPost(forzaReview);
+let fishingReview = new Post('RandomUsername', false, "A dream come true for fishing enthusiasts. The game nails realism with stunning graphics, lifelike fish behavior, and a deep selection of gear. ");
+fishingPlanet.createPost(fishingReview);
 
 // ----------------------------------- Render games ------------------------------------------------
 
