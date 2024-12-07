@@ -2,6 +2,7 @@ import { Account } from "./classes.js";
 import { Game } from "./classes.js";
 import { Post } from "./classes.js";
 
+//--------------------Grab the game to be displayed on the page, based on what the user clicked-----------------//
 var gameToDisplayObject = new Game();
 var gameToDisplay;
 let gameToDisplayTitle = localStorage.getItem('storedGame');
@@ -18,7 +19,8 @@ for (let i = 0; i < localStorage.length; i++){
     }
 }
 
-
+//-----------game is now stored in gameToDisplay variable-----------------------//
+//-----------populate game image name rating and description--------------------//
 let gameImage = document.getElementById('game-image');
 gameImage.src = gameToDisplay.image;
 
@@ -38,7 +40,7 @@ for (const gameStar of gameStars){
 let gameDescription = document.getElementById('game-description');
 gameDescription.innerHTML = gameToDisplay.description;
 
-
+//------------Populate the threads based on the game's posts object-------------------//
 let threadsDiv = document.getElementById('threads');
 let gameThreads = gameToDisplay.posts;
 for (let i = gameThreads.length - 1; i >= 0; i-- ){
@@ -67,6 +69,7 @@ for (let i = gameThreads.length - 1; i >= 0; i-- ){
     threadsDiv.appendChild(threadDiv);
 }
 
+//-------------variable initializations---------------------------//
 let noDiscussions = document.getElementById('no-threads');
 let createButton = document.getElementById('create-thread');
 let threadForm = document.getElementById('write-thread');
@@ -76,6 +79,7 @@ let closeButton = document.getElementById('close-form');
 let accountWarning = document.getElementById('account-warning');
 let postWarning = document.getElementById('post-warning');
 
+//--------------grab user account info---------------------------//
 let userAccount;
 let userName;
 if (localStorage.getItem('userAccount')){
@@ -87,6 +91,7 @@ if (gameToDisplay.posts.length > 0){
     noDiscussions.setAttribute('hidden', 'hidden');
 }
 
+//-----------------Create Thread----------------------------------//
 createButton.addEventListener('click', function(event){
     event.preventDefault();
     if (!threadForm.getAttribute('style')){
@@ -130,6 +135,7 @@ submitButton.addEventListener('click', function(event){
     }
 });
 
+//------------------Adjust user rating-----------------------------------------------//
 const adjustUserRating = function(){
     if (gameToDisplay.userRating){
         let userRating = document.getElementById('user-rating');
