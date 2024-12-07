@@ -121,17 +121,20 @@ submitButton.addEventListener('click', function(event){
     }
 });
 
-if (gameToDisplay.userRating){
-    let userRating = document.getElementById('user-rating');
-    let userStars = userRating.getElementsByTagName('SPAN');
-    for (const userStar of userStars){
-        if (userStar.getAttribute('data-value') > gameToDisplay.userRating){
-            userStar.style.color = 'lightgray';
-        } else{
-            userStar.style.color = 'gold';
+const adjustUserRating = function(){
+    if (gameToDisplay.userRating){
+        let userRating = document.getElementById('user-rating');
+        let userStars = userRating.getElementsByTagName('SPAN');
+        for (const userStar of userStars){
+            if (userStar.getAttribute('data-value') > gameToDisplay.userRating){
+                userStar.style.color = 'lightgray';
+            } else{
+                userStar.style.color = 'gold';
+            }
         }
     }
 }
+
 let userRatingDiv = document.getElementById('user-rating');
 let userRatingStars = userRatingDiv.getElementsByClassName('star');
 
@@ -144,6 +147,9 @@ userRatingDiv.addEventListener('click', function(event){
         }
         gameToDisplay.userRating = event.target.getAttribute('data-value');
         localStorage.setItem(gameToDisplayTitle, JSON.stringify(gameToDisplay));
+        adjustUserRating();
     }
 });
+
+adjustUserRating();
 
