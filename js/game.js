@@ -41,18 +41,18 @@ gameDescription.innerHTML = gameToDisplay.description;
 
 let threadsDiv = document.getElementById('threads');
 let gameThreads = gameToDisplay.posts;
-for (const thread of gameThreads){
+for (let i = gameThreads.length - 1; i >= 0; i-- ){
 
     const threadDiv = document.createElement('div');
 
     const threadUsername = document.createElement('h4');
-    const threadUsernameText = document.createTextNode(thread.username);
+    const threadUsernameText = document.createTextNode(gameThreads[i].username);
     threadUsername.appendChild(threadUsernameText);
     threadUsername.classList.add('username')
     threadDiv.appendChild(threadUsername);
 
     const threadBody = document.createElement('p');
-    const threadBodyText = document.createTextNode(thread.body);
+    const threadBodyText = document.createTextNode(gameThreads[i].body);
     threadBody.appendChild(threadBodyText);
     threadBody.classList.add('user-thread');
     threadDiv.appendChild(threadBody);
@@ -72,6 +72,7 @@ let createButton = document.getElementById('create-thread');
 let threadForm = document.getElementById('write-thread');
 let threadContent = document.getElementById('thread-content');
 let submitButton = document.getElementById('submit-form');
+let closeButton = document.getElementById('close-form');
 let accountWarning = document.getElementById('account-warning');
 let postWarning = document.getElementById('post-warning');
 
@@ -90,20 +91,28 @@ createButton.addEventListener('click', function(event){
     event.preventDefault();
     if (!threadForm.getAttribute('style')){
         if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true')
+        {
+            threadContent.value = '';
             threadForm.style.display = 'flex';
+        }
         else{
             accountWarning.innerHTML = "You need to be signed in to create a thread."
         }
     } else if (threadForm.style.display === 'none') { 
         if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true' ){
+            threadContent.value = '';
             threadForm.style.display = 'flex';
         } else{
             accountWarning.innerHTML = "You need to be signed in to create a thread."
         }
-    } else { 
-        threadForm.style.display = 'none';
     } 
 });
+
+closeButton.addEventListener('click', function(event){
+    event.preventDefault();
+    threadContent.value = '';
+    threadForm.style.display = 'none';
+})
 
 submitButton.addEventListener('click', function(event){
     event.preventDefault();
