@@ -151,5 +151,19 @@ userRatingDiv.addEventListener('click', function(event){
     }
 });
 
+userRatingDiv.addEventListener('mouseover', function(event){
+    if (event.target.tagName == 'SPAN'){
+        for (const userRatingStar of userRatingStars){
+            userRatingStar.removeAttribute('style')
+        }
+    }
+})
+
+userRatingDiv.addEventListener('mouseout', function(event){
+    if (event.target.tagName == 'SPAN'){
+       adjustUserRating();
+    }
+})
+
 adjustUserRating();
 
