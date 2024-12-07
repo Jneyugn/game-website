@@ -126,6 +126,11 @@ a.view-reply:hover {
     color: gold;
 }
 
+#user-rating{
+    direction: rtl;
+    text-align: left;
+}
+
 /*user star rating*/
 .star {
     color: lightgray;
@@ -133,7 +138,11 @@ a.view-reply:hover {
     cursor: pointer;
 }
 
-.star:hover ~ .star {
+.star:hover{
+    color: gold;
+}
+
+.star:hover ~ .star{
     color: gold;
 }
 
