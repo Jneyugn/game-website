@@ -1,5 +1,6 @@
 import { Account } from "./classes.js";
 
+//-----------------------------------------------------IMAGES GRID-----------------------------------------------------------//
 let imageGrid = document.getElementById('img-grid');
 let gridImages = imageGrid.getElementsByTagName('IMG');
 
@@ -39,6 +40,8 @@ function assignImages(){
 
 setInterval(assignImages, 1000);
 
+
+//-----------------------------------------------------Initializations-------------------//
 let form = document.getElementById('register');
 let firstName = document.getElementById('first-name');
 let lastName = document.getElementById('last-name');
@@ -55,11 +58,14 @@ let accountMessage = document.getElementById('account-msg');
 let accountPrompt = document.getElementById('account-prompt');
 let homeButton = document.getElementById('home');
 
+
+//-----------------home button---------------------------//
 homeButton.addEventListener('click', function(event){
     event.preventDefault();
     window.location.href = 'index.html';
 })
 
+//---------------sign up--------------------------------------------------//
 var signUp = function(event){
     event.preventDefault();
 
@@ -93,6 +99,7 @@ var signUp = function(event){
 
 signinButton.addEventListener('click', signUp);
 
+//---------------------Clear required message when the input is focused---------------//
 form.addEventListener('click', function(event){
     if (event.target.tagName === 'INPUT'){
         switch(event.target.id){
@@ -116,6 +123,7 @@ form.addEventListener('click', function(event){
     }
 });
 
+//-----------------------------------------------Morph the page to fit whether it's a sign up or sign in ---------------------//
 window.addEventListener('load', function(){
     if (localStorage.getItem('userAccount')){
         form.removeChild(firstName);

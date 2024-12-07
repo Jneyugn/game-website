@@ -1,7 +1,7 @@
 import { Game } from "./classes.js";
 import { Post } from "./classes.js";
 
-// -------------------- Populate home page with games -------------------------------- 
+// -------------------- Populate home page with games and make some initial review posts-------------------------------- 
 
 // Trending
 let diablo4 = new Game('Diablo 4', 'images/games/diablo4.jpg', 'Action', 4, 'Diablo IV is the ultimate action-RPG experience with endless evil to slaughter, countless abilities to master, nightmarish dungeons, and legendary loot. Embark on the epic campaign solo or with friends, meeting memorable characters through a gripping story in a beautifully dark world, or explore an expansive end game: battle iconic bosses for powerful loot, fight back the encroaching onslaught of Hell in Helltides, master the Forge to create your ultimate weapons and progress powerful characters, with cross-play and cross-progression on all available platforms.');
@@ -195,6 +195,7 @@ RenderGames(simGamesDivChildren, simGames);
 RenderGames(rpgGamesDivChildren, rpgGames);
 RenderGames(sportsRacingGamesDivChildren, sportsRacingGames);
 
+//----------------add up all the games and store their titles in local storage------------------------------------------------------//
 let allGames = trendingGames.concat(actionGames, horrorGames, strategyGames, adventureGames, simGames, rpgGames, sportsRacingGames);
 if (!localStorage.getItem(allGames[0].title)){
     for (const game of allGames){
@@ -203,7 +204,7 @@ if (!localStorage.getItem(allGames[0].title)){
 }
 
 
-
+//-------------Store which game the user clicked on-------------------------//
 let gameDivs = document.getElementsByClassName('game');
 function storeClickedGame(game){
     let gameTitle = game.getElementsByTagName('H3')[0].innerHTML;
