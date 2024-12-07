@@ -44,7 +44,7 @@
     margin: 0
 }
 
-#account-warning{
+#account-warning, #post-warning{
     color:red;
 }
 
