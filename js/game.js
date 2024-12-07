@@ -2,8 +2,22 @@ import { Account } from "./classes.js";
 import { Game } from "./classes.js";
 import { Post } from "./classes.js";
 
-let gameToDisplayString = localStorage.getItem('storedGame');
-let gameToDisplay = JSON.parse(gameToDisplayString);
+var gameToDisplayObject = new Game();
+var gameToDisplay;
+let gameToDisplayTitle = localStorage.getItem('storedGame');
+for (let i = 0; i < localStorage.length; i++){
+    if (localStorage.key(i) == gameToDisplayTitle){
+        gameToDisplay = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        gameToDisplayObject.title = gameToDisplay.title;
+        gameToDisplayObject.image = gameToDisplay.image;
+        gameToDisplayObject.genre = gameToDisplay.genre;
+        gameToDisplayObject.rating = gameToDisplay.rating;
+        gameToDisplayObject.description = gameToDisplay.description;
+        gameToDisplayObject.posts = gameToDisplay.posts;
+        break;
+    }
+}
+
 
 let gameImage = document.getElementById('game-image');
 gameImage.src = gameToDisplay.image;
@@ -59,11 +73,13 @@ let threadForm = document.getElementById('write-thread');
 let threadContent = document.getElementById('thread-content');
 let submitButton = document.getElementById('submit-form');
 let accountWarning = document.getElementById('account-warning');
+let postWarning = document.getElementById('post-warning');
 
 let userAccount;
+let userName;
 if (localStorage.getItem('userAccount')){
-    userAccount = JSON.parse(localStorage.getItem('userAccount'))
-    console.log(userAccount.username);
+    userAccount = JSON.parse(localStorage.getItem('userAccount'));
+    userName = userAccount.username;
 }
 
 if (gameToDisplay.posts.length > 0){
@@ -76,17 +92,31 @@ createButton.addEventListener('click', function(event){
         if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true')
             threadForm.style.display = 'flex';
         else{
-            console.log('nope');
             accountWarning.innerHTML = "You need to be signed in to create a thread."
         }
     } else if (threadForm.style.display === 'none') { 
         if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true' ){
             threadForm.style.display = 'flex';
         } else{
-            console.log('nope');
             accountWarning.innerHTML = "You need to be signed in to create a thread."
         }
     } else { 
         threadForm.style.display = 'none';
     } 
+});
+
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+    var threadBody = threadContent.value;
+    
+    if (threadBody == '' || threadBody.trim().length == 0){
+        postWarning.innerHTML = "You can't post an empty thread";
+    } else{
+        postWarning.innerHTML = "";
+        let createdThread = new Post(userName, true,threadBody);
+        gameToDisplayObject.createPost(createdThread);
+        gameToDisplay.posts = gameToDisplayObject.posts;
+        localStorage.setItem(gameToDisplayTitle, JSON.stringify(gameToDisplay));
+        window.location.reload();
+    }
 });

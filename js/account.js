@@ -4,8 +4,10 @@ deleteButton.addEventListener('click', function(event){
     if (localStorage.getItem('userAccount'))
         localStorage.removeItem('userAccount');
         loggingButton.innerHTML = 'Create Account';
+        localStorage.setItem('signedIn', 'false');
         loggingButton.removeEventListener('click', signOut);
         loggingButton.addEventListener('click', loginPage);
+        window.location.reload();
 });
 
 let loggingButton = document.getElementById('logging-btn'); 
@@ -19,6 +21,7 @@ var signOut = function(event){
     localStorage.setItem('signedIn', 'false');
     loggingButton.removeEventListener('click', signOut);
     loggingButton.addEventListener('click', loginPage);
+    window.location.reload();
 }
 loggingButton.addEventListener('click', loginPage);
 window.addEventListener('load', function(){

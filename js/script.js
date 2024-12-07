@@ -196,12 +196,18 @@ RenderGames(rpgGamesDivChildren, rpgGames);
 RenderGames(sportsRacingGamesDivChildren, sportsRacingGames);
 
 let allGames = trendingGames.concat(actionGames, horrorGames, strategyGames, adventureGames, simGames, rpgGames, sportsRacingGames);
+if (!localStorage.getItem(allGames[0].title)){
+    for (const game of allGames){
+        localStorage.setItem(game.title, JSON.stringify(game));
+    }
+}
+
+
+
 let gameDivs = document.getElementsByClassName('game');
 function storeClickedGame(game){
     let gameTitle = game.getElementsByTagName('H3')[0].innerHTML;
-    let gameClicked = allGames.find((gameObject) => gameObject.title == gameTitle);
-    let gameToStore = JSON.stringify(gameClicked);
-    localStorage.setItem('storedGame', gameToStore);
+    localStorage.setItem('storedGame', gameTitle);
     window.location.replace('game.html');
 }
 for (var i = 0; i < gameDivs.length; i++){
