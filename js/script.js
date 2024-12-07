@@ -208,7 +208,7 @@ let gameDivs = document.getElementsByClassName('game');
 function storeClickedGame(game){
     let gameTitle = game.getElementsByTagName('H3')[0].innerHTML;
     localStorage.setItem('storedGame', gameTitle);
-    window.location.replace('game.html');
+    window.location.href = 'game.html';
 }
 for (var i = 0; i < gameDivs.length; i++){
     let game = gameDivs[i];

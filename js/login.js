@@ -57,7 +57,7 @@ let homeButton = document.getElementById('home');
 
 homeButton.addEventListener('click', function(event){
     event.preventDefault();
-    window.location.replace('index.html');
+    window.location.href = 'index.html';
 })
 
 var signUp = function(event){
@@ -141,7 +141,7 @@ window.addEventListener('load', function(){
                 accountMessage.innerHTML = "Username or password incorrect!";
             } else {
                 localStorage.setItem('signedIn', 'true');
-                window.location.replace('index.html');
+                window.location.href = 'index.html';
             }
         });
     }

@@ -13,7 +13,7 @@ deleteButton.addEventListener('click', function(event){
 let loggingButton = document.getElementById('logging-btn'); 
 var loginPage = function(event){
     event.preventDefault();
-    window.location.replace('login.html');
+    window.location.href = 'login.html';
 }
 var signOut = function(event){
     event.preventDefault();
