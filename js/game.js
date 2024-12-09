@@ -43,6 +43,7 @@ gameDescription.innerHTML = gameToDisplay.description;
 //------------Populate the threads based on the game's posts object-------------------//
 let threadsDiv = document.getElementById('threads');
 let gameThreads = gameToDisplay.posts;
+
 for (let i = gameThreads.length - 1; i >= 0; i-- ){
 
     const threadDiv = document.createElement('div');
@@ -63,6 +64,7 @@ for (let i = gameThreads.length - 1; i >= 0; i-- ){
     const threadViewText = document.createTextNode('View/Reply');
     threadView.appendChild(threadViewText);
     threadView.classList.add('view-reply');
+    threadView.setAttribute('data-value', i);
     threadDiv.appendChild(threadView);
     
     threadDiv.classList.add('thread');

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/thread.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');</style>
-    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <script type="module" src="js/thread.js" defer></script>
+    <script src="js/account.js" defer></script>
     <title>Game Thread</title>
 </head>
+
 <body>
     <!--header/navigation section-->
     <header>
@@ -44,19 +49,19 @@
             <div class="thread">
                 <div class="post-info">
                     <h4 class="username">Username</h4>
-                    <h5 class="date">5 days ago</h5>
+                    <h5 class="date" hidden="hidden">5 days ago</h5>
                 </div>
                 <p class="user-thread">
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                    Iaculis phasellus neque varius bibendum sit curae. 
-                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
-                    Finibus primis placerat ornare eleifend; ipsum hac diam. 
+                    Lorem ipsum odor amet, consectetuer adipiscing elit.
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                    Iaculis phasellus neque varius bibendum sit curae.
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
+                    Finibus primis placerat ornare eleifend; ipsum hac diam.
                     Tortor eget adipiscing cursus tortor dis cras pulvinar.
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                    Iaculis phasellus neque varius bibendum sit curae. 
-                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim. 
+                    Lorem ipsum odor amet, consectetuer adipiscing elit.
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                    Iaculis phasellus neque varius bibendum sit curae.
+                    Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.
                 </p>
                 <button class="reply">Reply</button>
             </div>
@@ -71,29 +76,23 @@
             <div id="thread-comment">
                 <div class="post-info">
                     <h4 class="username">Username</h4>
-                    <h5 class="date">1 hour ago</h5>
+                    <h5 class="date" hidden="hidden">1 hour ago</h5>
                 </div>
                 <p class="comment">
                     Tortor eget adipiscing cursus tortor dis cras pulvinar.
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. 
-                    Aliquam vel nunc orci sagittis potenti suspendisse egestas. 
-                    Iaculis phasellus neque varius bibendum sit curae. 
+                    Lorem ipsum odor amet, consectetuer adipiscing elit.
+                    Aliquam vel nunc orci sagittis potenti suspendisse egestas.
+                    Iaculis phasellus neque varius bibendum sit curae.
                     Cras molestie integer consequat adipiscing facilisi inceptos ligula dui enim.</p>
-            </div>
-            <div id="thread-comment">
-                <div class="post-info">
-                    <h4 class="username"></h4>
-                    <h5 class="date"></h5>
-                </div>
-                <p class="comment"></p>
             </div>
         </section>
     </main>
-   <!--footer-->
-   <footer>
+    <!--footer-->
+    <footer>
         <p>2024 Fundamentals of JavaScript</p>
         <p>&copy; Nha Ngoc Jenny Nguyen, Anupa Ragoonanan, Joseph Nahas & Alaa Attia</p>
         <a id="delete-account" href="#">Delete account</a>
     </footer>
 </body>
+
 </html>
