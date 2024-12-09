@@ -65,6 +65,7 @@ for (let i = gameThreads.length - 1; i >= 0; i-- ){
     threadView.appendChild(threadViewText);
     threadView.classList.add('view-reply');
     threadView.setAttribute('data-value', i);
+    threadView.setAttribute('href', 'thread.html');
     threadDiv.appendChild(threadView);
     
     threadDiv.classList.add('thread');
@@ -184,3 +185,10 @@ userRatingDiv.addEventListener('mouseout', function(event){
 
 adjustUserRating();
 
+threadsDiv.addEventListener('click', function(event){
+    if (event.target.classList.contains('view-reply')){
+        event.preventDefault();
+        localStorage.setItem('savedPost', event.target.getAttribute('data-value'));
+        window.location.href = 'thread.html';
+    }
+});
