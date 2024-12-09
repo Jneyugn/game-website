@@ -119,6 +119,7 @@ createButton.addEventListener('click', function(event){
 closeButton.addEventListener('click', function(event){
     event.preventDefault();
     threadContent.value = '';
+    postWarning.innerHTML = '';
     threadForm.style.display = 'none';
 })
 
