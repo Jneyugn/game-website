@@ -53,7 +53,7 @@ replyButton.addEventListener('click', function(event){
 closeButton.addEventListener('click', function(event){
     event.preventDefault();
     replyContent.value = '';
-    postWarning.innerHTML - '';
+    postWarning.innerHTML = '';
     replyForm.style.display = 'none';
 })
 
