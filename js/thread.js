@@ -9,8 +9,66 @@ for (let i = 0; i < localStorage.length; i++){
 }
 
 let postID = localStorage.getItem('savedPost');
-let userName = document.getElementById('username');
+let postUserName = document.getElementById('username');
 let postBody = document.getElementById('body');
 
-userName.innerHTML = game.posts[postID].username;
+postUserName.innerHTML = game.posts[postID].username;
 postBody.innerHTML = game.posts[postID].body;
+
+let replyButton = document.getElementById('reply-btn');
+let replyForm = document.getElementById('reply-thread');
+let replyContent = document.getElementById('comment');
+let submitButton = document.getElementById('submit-reply');
+let closeButton = document.getElementById('close-form');
+let accountWarning = document.getElementById('account-warning');
+let postWarning = document.getElementById('post-warning');
+let userAccount;
+let replyUserName;
+if (localStorage.getItem('userAccount')){
+    userAccount = JSON.parse(localStorage.getItem('userAccount'));
+    replyUserName = userAccount.username;
+}
+
+replyButton.addEventListener('click', function(event){
+    event.preventDefault();
+    if (!replyForm.getAttribute('style')){
+        if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true')
+        {
+            replyContent.value = '';
+            replyForm.style.display = 'flex';
+        }
+        else{
+            accountWarning.innerHTML = "You need to be signed in to reply."
+        }
+    } else if (replyForm.style.display === 'none') { 
+        if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true' ){
+            replyContent.value = '';
+            replyForm.style.display = 'flex';
+        } else{
+            accountWarning.innerHTML = "You need to be signed in to reply."
+        }
+    } 
+});
+
+closeButton.addEventListener('click', function(event){
+    event.preventDefault();
+    replyContent.value = '';
+    postWarning.innerHTML - '';
+    replyForm.style.display = 'none';
+})
+
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+    var replyBody = replyContent.value;
+    
+    if (replyBody == '' || replyBody.trim().length == 0){
+        postWarning.innerHTML = "You can't post an empty thread";
+    } else{
+        postWarning.innerHTML = "";
+        /*let createdThread = new Post(userName, true,threadBody);
+        gameToDisplayObject.createPost(createdThread);
+        gameToDisplay.posts = gameToDisplayObject.posts;
+        localStorage.setItem(gameToDisplayTitle, JSON.stringify(gameToDisplay));
+        window.location.reload();*/
+    }
+});

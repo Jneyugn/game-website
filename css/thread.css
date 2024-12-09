@@ -34,6 +34,16 @@ button.reply:hover {
     color: white;
 }
 
+#form-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+#account-warning, #post-warning{
+    color:red;
+    padding : 0 10px 0 10px;
+}
+
 #thread-container h3 {
     margin: 0;
 }
@@ -42,6 +52,11 @@ button.reply:hover {
 #reply-thread {
     width: 90%;
     margin: 20px 0 0 auto;
+    display: none;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
 }
 
 textarea#comment {
