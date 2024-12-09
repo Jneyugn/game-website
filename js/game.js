@@ -43,6 +43,7 @@ gameDescription.innerHTML = gameToDisplay.description;
 //------------Populate the threads based on the game's posts object-------------------//
 let threadsDiv = document.getElementById('threads');
 let gameThreads = gameToDisplay.posts;
+
 for (let i = gameThreads.length - 1; i >= 0; i-- ){
 
     const threadDiv = document.createElement('div');
@@ -63,6 +64,8 @@ for (let i = gameThreads.length - 1; i >= 0; i-- ){
     const threadViewText = document.createTextNode('View/Reply');
     threadView.appendChild(threadViewText);
     threadView.classList.add('view-reply');
+    threadView.setAttribute('data-value', i);
+    threadView.setAttribute('href', 'thread.html');
     threadDiv.appendChild(threadView);
     
     threadDiv.classList.add('thread');
@@ -182,3 +185,10 @@ userRatingDiv.addEventListener('mouseout', function(event){
 
 adjustUserRating();
 
+threadsDiv.addEventListener('click', function(event){
+    if (event.target.classList.contains('view-reply')){
+        event.preventDefault();
+        localStorage.setItem('savedPost', event.target.getAttribute('data-value'));
+        window.location.href = 'thread.html';
+    }
+});
