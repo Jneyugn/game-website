@@ -34,12 +34,12 @@ button.reply:hover {
     color: white;
 }
 
-#form-buttons{
+.form-buttons{
     display: flex;
     gap: 10px;
 }
 
-#account-warning, #post-warning{
+#account-warning, #post-warning, #edit-warning{
     color:red;
     padding : 0 10px 0 0;
 }
@@ -49,7 +49,7 @@ button.reply:hover {
 }
 
 /*comment section*/
-#reply-thread {
+#reply-thread, #edit-thread {
     width: 90%;
     margin: 20px 0 0 auto;
     display: none;
