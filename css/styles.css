@@ -209,7 +209,7 @@ footer a {
 }
 
 /*responsive tablet sizing*/
-@media (max-width: 1010px) {
+@media (max-width: 1150px) {
     /*general styling*/
     header {
         padding: 10px 0 10px 20px;
@@ -236,7 +236,7 @@ footer a {
 }
 
 /*reponsive mobile styling*/
-@media (max-width: 710px) {
+@media (max-width: 850px) {
     /*general styling*/
     header {
         flex-direction: column;
@@ -251,8 +251,21 @@ footer a {
 
     #navigation-bar {
         display: flex;
-        flex-direction: row;
         align-items: center;
         position: relative;
+        padding: 0;
+        scale: 100%;
+        width: 100%;
+        overflow-x: auto;
     }
+
+    #navigation-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    #navigation-bar button {
+        width: 130px;
+    }
+
+
 }
