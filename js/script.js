@@ -15,7 +15,7 @@ let balatro = new Game('Balatro', 'images/games/balatro.jpg', 'Strategy', 4, "Th
 
 let trendingGames = [wukong, callofduty, diablo4, counterstrike2, dota2, baldurGate3, stalker2, balatro];
 let trendingGamesDiv = document.getElementById('trending-games');
-let trendingGamesDivChildren = trendingGamesDiv.getElementsByTagName('DIV');
+let trendingGamesDivChildren = trendingGamesDiv.getElementsByClassName('game');
 
 let diablo4Review = new Post('RandomUsername', false,'Unfortunately, the creators of Diablo IV decided to take the lazy route with using level scaling. This makes leveling up feel meaningless and legendary gear spam is dull. All monsters are about equally challenging and you lose the fun and excitement of going into an area with deadly monsters... Instead there is a sort of difficulty changing systems which is arcadish and lame.');
 diablo4.createPost(diablo4Review);
@@ -38,7 +38,7 @@ let pubg = new Game('PUBG', 'images/games/pubg.jpg', 'Action', 3, "Play PUBG: BA
 
 let actionGames = [warframe, eldenRing, readyornot, apexLegends, remnant2, helldivers2, onceHuman, pubg];
 let actionGamesDiv = document.getElementById('action-games');
-let actionGamesDivChildren = actionGamesDiv.getElementsByTagName('DIV');
+let actionGamesDivChildren = actionGamesDiv.getElementsByClassName('game');
 
 let eldenRingReview = new Post('RandomUsername', false, "I really do think this is one of the best games ever made, and it's only gotten better with time. Is it perfect? No, nothing is. While it has countless flaws, its an absolute masterpiece.");
 eldenRing.createPost(eldenRingReview);
@@ -59,7 +59,7 @@ let inscryption = new Game('Inscryption', 'images/games/inscryption.jpg', 'Horro
 
 let horrorGames = [sonsoftheforest, vRising, deadbydaylight, phasmophobia, lethalCompany, vampyr, untilDawn, inscryption];
 let horrorGamesDiv = document.getElementById('horror-games');
-let horrorGamesDivChildren = horrorGamesDiv.getElementsByTagName('DIV');
+let horrorGamesDivChildren = horrorGamesDiv.getElementsByClassName('game');
 
 let deadReview = new Post('RandomUsername', false, "A really fun PvP horror game, especially if you’re a fan of the genre. The only catch is that unlocking all the perks and characters takes a serious time commitment. It’s definitely a grind, and it can get a bit overwhelming, but if you’re willing to put the time in, it’s totally worth it.");
 deadbydaylight.createPost(deadReview);
@@ -80,7 +80,7 @@ let civ5 = new Game('Civilisation 5', 'images/games/civ5.jpg', 'Strategy', 4, "B
 
 let strategyGames = [heartsofiron4, bloonstd6, ageofempires2, kingdomtwocrowns, stellaris, europaunversalis4, totalwar3, civ5];
 let strategyGamesDiv = document.getElementById('strategy-games');
-let strategyGamesDivChildren = strategyGamesDiv.getElementsByTagName('DIV');
+let strategyGamesDivChildren = strategyGamesDiv.getElementsByClassName('game');
 
 let heartsReview = new Post('RandomUsername', false, "Playing this game feels like rewriting history. It’s like a history simulator where you can test any wild scenario you can imagine. For example, you can choose France, become Fascist, ally with Germany, and relive World War II with a completely new outcome!");
 heartsofiron4.createPost(heartsReview);
@@ -101,7 +101,7 @@ let AcMirage = new Game('AC Mirage', 'images/games/acmirage.jpg', 'Adventure', 4
 
 let adventureGames = [uncharted, monsterHunter, gta5, newWorld, ghostoftsushima, theFirstDescendant, rust, AcMirage];
 let adventureGamesDiv = document.getElementById('adventure-games');
-let adventureGamesDivChildren = adventureGamesDiv.getElementsByTagName('DIV');
+let adventureGamesDivChildren = adventureGamesDiv.getElementsByClassName('game');
 
 let UnchartedReview = new Post('RandomUsername', false, "The game is one of the most beautiful and well rendered things I have ever played. I wish I had a better PC to run this thing on its highest settings, but even when put lower, it shines. I played through the entire game and its standalone DLC, and I give it a solid 9/10.");
 uncharted.createPost(UnchartedReview);
@@ -122,7 +122,7 @@ let sims4 = new Game('The Sims 4', 'images/games/sims4.jpg', 'Simulation', 3, "P
 
 let simGames = [stardewValley, powerwash, garrysmod, worldofwarships, eurotruck2, farming25, dayZ, sims4];
 let simGamesDiv = document.getElementById('simulation-games');
-let simGamesDivChildren = simGamesDiv.getElementsByTagName('DIV');
+let simGamesDivChildren = simGamesDiv.getElementsByClassName('game');
 
 let stardewReview = new Post('RandomUsername', false, "This is the perfect slow and cozy game with the right amount of excitement. You can take it slow and build your farm and then gradually incorporate missions, towns folk relationships and journeys. It's easy to play this game for hours on end and watch your empire grow.");
 stardewValley.createPost(stardewReview);
@@ -143,7 +143,7 @@ let fallout76 = new Game('Fallout 76', 'images/games/fallout76.jpg', 'RPG', 1, "
 
 let rpgGames = [metaphor, finalfantasy7, dyingLight2, blackDesert, dragonAge, AcValhalla, pathofexile, fallout76];
 let rpgGamesDiv = document.getElementById('rpg-games');
-let rpgGamesDivChildren = rpgGamesDiv.getElementsByTagName('DIV');
+let rpgGamesDivChildren = rpgGamesDiv.getElementsByClassName('game');
 
 let dyingLightReview = new Post('RandomUsername', false, "Dying Light 2 is an absolutely thrilling open-world survival game that takes everything fans loved about the first title and amplifies it to new heights. From the moment you step into the shoes of Aiden Caldwell, the game's protagonist, you’re instantly immersed in a world brimming with danger, choices, and breathtaking freedom.");
 dyingLight2.createPost(dyingLightReview);
@@ -164,7 +164,7 @@ let golf = new Game('Golf with your Friends', 'images/games/golf.jpg', 'Sports/R
 
 let sportsRacingGames = [nba2k25, footballManager, forzaHorizon5, carXstreet, fishingPlanet, assettoCorsa, need4speed, golf];
 let sportsRacingGamesDiv = document.getElementById('recreation-games');
-let sportsRacingGamesDivChildren = sportsRacingGamesDiv.getElementsByTagName('DIV');
+let sportsRacingGamesDivChildren = sportsRacingGamesDiv.getElementsByClassName('game');
 
 let nbaReview = new Post('RandomUsername', false, "horrible optimization, frequent crashes and freezes with tons of technical issues, how do you guys manage to make the same game ever year, but it gets worse every year? Would not suggest buying at full price at all.");
 nba2k25.createPost(nbaReview);
@@ -181,7 +181,13 @@ function RenderGames (divList, gamesList){
         divList[i].getElementsByTagName('IMG')[0].src = gamesList[i].image;
         divList[i].getElementsByTagName('IMG')[0].alt = gamesList[i].title;
         divList[i].getElementsByTagName('h3')[0].innerHTML = gamesList[i].title;
-        divList[i].getElementsByTagName('p')[0].innerHTML = gamesList[i].rating;
+        let ratingDiv = divList[i].getElementsByClassName('rating');
+        let ratingDivChildren = ratingDiv[0].getElementsByTagName('SPAN');
+        for (const ratingStar of ratingDivChildren){
+            if (ratingStar.getAttribute('data-value') > gamesList[i].rating){
+                ratingStar.setAttribute('hidden', 'hidden');
+            }
+        }
     }
 }
 

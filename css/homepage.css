@@ -82,6 +82,10 @@
     overflow-x: auto;
 }
 
+.rating span{
+    color: gold;
+}
+
 /*trending games*/
 #trending h2 {
     background-color: rgb(123, 123, 123);
