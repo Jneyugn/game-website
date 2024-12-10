@@ -25,9 +25,17 @@ export class Account {
 }
 
 export class Post{
-    constructor(username, editable, body){
+    constructor(username, editable, body, replies=[]){
         this.username = username
         this.editable = editable;
+        this.body = body;
+        this.replies = replies;
+    }
+}
+
+export class Reply{
+    constructor(username, body){
+        this.username = username;
         this.body = body;
     }
 }

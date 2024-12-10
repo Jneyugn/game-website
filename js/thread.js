@@ -1,3 +1,5 @@
+import { Reply } from "./classes.js";
+
 //--------------------Grab the game to which the thread belongs to, based on what the user clicked-----------------//
 var game;
 let gameTitle = localStorage.getItem('storedGame');
@@ -66,14 +68,16 @@ submitButton.addEventListener('click', function(event){
     var replyBody = replyContent.value;
     
     if (replyBody == '' || replyBody.trim().length == 0){
-        postWarning.innerHTML = "You can't post an empty thread";
+        postWarning.innerHTML = "You can't post an empty reply";
     } else{
         postWarning.innerHTML = "";
-        /*let createdThread = new Post(userName, true,threadBody);
-        gameToDisplayObject.createPost(createdThread);
-        gameToDisplay.posts = gameToDisplayObject.posts;
-        localStorage.setItem(gameToDisplayTitle, JSON.stringify(gameToDisplay));
-        window.location.reload();*/
+        const reply = new Reply(replyUserName, replyBody);
+        if (!game.posts[postID].replies){
+            game.posts[postID].replies = [];
+        }
+        game.posts[postID].replies.push(reply);
+        localStorage.setItem(game.title, JSON.stringify(game));
+        window.location.reload();
     }
 });
 
@@ -137,3 +141,34 @@ editSave.addEventListener('click', function(){
         window.location.reload();
     }
 });
+
+let repliesSection = document.getElementById('thread-responses');
+let threadReplies = game.posts[postID].replies;
+let noComments = document.getElementById('no-comments');
+
+if (threadReplies){
+    if (threadReplies.length > 0){
+        noComments.setAttribute('hidden', 'hidden');
+        for (let i = threadReplies.length - 1; i >= 0; i-- ){
+
+            const replyDiv = document.createElement('DIV');
+            const infoDiv = document.createElement('DIV');
+            const replyUsername = document.createElement('h4');
+            const replyUsernameText = document.createTextNode(threadReplies[i].username);
+            replyUsername.appendChild(replyUsernameText);
+            replyUsername.classList.add('username')
+            infoDiv.appendChild(replyUsername);
+            replyDiv.appendChild(infoDiv);
+        
+            const replyBody = document.createElement('p');
+            const replyBodyText = document.createTextNode(threadReplies[i].body);
+            replyBody.appendChild(replyBodyText);
+            replyBody.classList.add('comment');
+            replyDiv.appendChild(replyBody);
+            
+            replyDiv.setAttribute('id', 'thread-comment');
+            repliesSection.appendChild(replyDiv);
+        }
+    }
+
+}
