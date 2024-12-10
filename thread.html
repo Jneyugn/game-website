@@ -11,6 +11,7 @@
     </style>
     <script type="module" src="js/thread.js" defer></script>
     <script src="js/account.js" defer></script>
+    <script src="js/search.js" defer></script>
     <title>Game Thread</title>
 </head>
 
@@ -36,7 +37,11 @@
                     </li>
                 </ul>
             </nav>
-            <input type="text" placeholder="SEARCH...">
+            <div id="search">
+                <input type="text" id="search-input" placeholder="SEARCH...">
+                <ul id="search-results">
+                </ul>
+            </div>
             <div id="account">
                 <button id="logging-btn">Create Account</button>
             </div>
