@@ -245,3 +245,17 @@
 #recreation-games.game-layout::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 255, 0.5);
 }
+
+
+/*responsive sizing*/
+@media (max-width: 1150px) {
+
+}
+
+
+@media (max-width: 850px) {
+    .game {
+        width: 200px;
+        height: 200px;
+    }
+}
