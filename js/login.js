@@ -56,14 +56,6 @@ let usernameMessage = document.getElementById('username-msg');
 let passwordMessage = document.getElementById('password-msg');
 let accountMessage = document.getElementById('account-msg');
 let accountPrompt = document.getElementById('account-prompt');
-let homeButton = document.getElementById('home');
-
-
-//-----------------home button---------------------------//
-homeButton.addEventListener('click', function(event){
-    event.preventDefault();
-    window.location.href = 'index.html';
-})
 
 //---------------sign up--------------------------------------------------//
 var signUp = function(event){
