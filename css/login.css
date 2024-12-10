@@ -12,6 +12,11 @@
     margin: auto;
 }
 
+#logo-login {
+    width: 40%;
+    margin: 0 30%;
+}
+
 #login:hover {
     text-shadow: 0 0 10px rgb(255, 255, 255);
 }
@@ -19,7 +24,7 @@
 #register {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     width: 500px;
 }
 
