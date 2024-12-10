@@ -72,3 +72,29 @@ submitButton.addEventListener('click', function(event){
         window.location.reload();*/
     }
 });
+
+var editButton;
+var deleteButton;
+let postButtons = document.getElementById('post-buttons');
+
+if (game.posts[postID].editable && localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true'){
+    editButton = document.createElement('button');
+    editButton.classList.add('reply');
+    let editButtonText = document.createTextNode('Edit');
+    editButton.appendChild(editButtonText);
+    postButtons.appendChild(editButton);
+
+    deleteButton = document.createElement('button');
+    deleteButton.classList.add('reply');
+    let deleteButtonText = document.createTextNode('Delete');
+    deleteButton.appendChild(deleteButtonText);
+    postButtons.appendChild(deleteButton);
+}
+
+if (deleteButton){
+    deleteButton.addEventListener('click', function(event){
+        game.posts.splice(postID, 1);
+        localStorage.setItem(game.title, JSON.stringify(game));
+        window.location.href = 'game.html';
+    });
+}
