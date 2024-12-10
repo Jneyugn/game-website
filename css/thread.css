@@ -25,7 +25,7 @@ button.reply {
     background: none;
     color: lightgrey;
     border: none;
-    padding: 0;
+    padding: 0 10px 0 0;
     font-size: 1em;
 }
 
@@ -41,7 +41,7 @@ button.reply:hover {
 
 #account-warning, #post-warning{
     color:red;
-    padding : 0 10px 0 10px;
+    padding : 0 10px 0 0;
 }
 
 #thread-container h3 {
