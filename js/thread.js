@@ -36,6 +36,8 @@ replyButton.addEventListener('click', function(event){
         {
             replyContent.value = '';
             replyForm.style.display = 'flex';
+            editWarning.innerHTML = '';
+            editThread.style.display = 'none';
         }
         else{
             accountWarning.innerHTML = "You need to be signed in to reply."
@@ -44,6 +46,8 @@ replyButton.addEventListener('click', function(event){
         if (localStorage.getItem('signedIn') && localStorage.getItem('signedIn') === 'true' ){
             replyContent.value = '';
             replyForm.style.display = 'flex';
+            editWarning.innerHTML = '';
+            editThread.style.display = 'none';
         } else{
             accountWarning.innerHTML = "You need to be signed in to reply."
         }
@@ -92,9 +96,44 @@ if (game.posts[postID].editable && localStorage.getItem('signedIn') && localStor
 }
 
 if (deleteButton){
-    deleteButton.addEventListener('click', function(event){
+    deleteButton.addEventListener('click', function(){
         game.posts.splice(postID, 1);
         localStorage.setItem(game.title, JSON.stringify(game));
         window.location.href = 'game.html';
     });
 }
+
+let editThread = document.getElementById('edit-thread');
+let editContent = document.getElementById('edit-comment');
+let editSave = document.getElementById('edit-save');
+let editClose = document.getElementById('edit-close');
+
+if (editButton){
+    editButton.addEventListener('click', function(){
+        if (!editThread.getAttribute('style') || editThread.style.display == 'none'){
+            editContent.value = game.posts[postID].body;
+            editThread.style.display = 'flex';
+            replyContent.value = '';
+            postWarning.innerHTML = '';
+            replyForm.style.display = 'none';
+        }
+    });
+}
+
+let editWarning = document.getElementById('edit-warning');
+
+editClose.addEventListener('click', function(){
+    editWarning.innerHTML = '';
+    editThread.style.display = 'none';
+});
+
+editSave.addEventListener('click', function(){
+    let editValue = editContent.value;
+    if (editValue == '' || editValue.trim().length == 0){
+        editWarning.innerHTML = 'You can not leave the post blank';
+    } else {
+        game.posts[postID].body = editValue;
+        localStorage.setItem(game.title, JSON.stringify(game));
+        window.location.reload();
+    }
+});
