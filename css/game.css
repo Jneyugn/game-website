@@ -1,6 +1,5 @@
 /*about game*/
 #game-thread {
-    border: 1px solid white;
     padding: 20px 20px 0 20px; 
     display: flex;
 }
