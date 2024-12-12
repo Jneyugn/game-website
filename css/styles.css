@@ -198,6 +198,7 @@ a {
 
 /*footer*/
 footer {
+    margin: 20px 0 0 0;
     clear: both;
     text-align: center;
     padding: 10px;

@@ -20,6 +20,93 @@ for (let i = 0; i < localStorage.length; i++){
 }
 
 //-----------game is now stored in gameToDisplay variable-----------------------//
+//styles based on genre
+function applyGenreStyles(genre) {
+    let colorScheme;
+    let boxShadowValues = {
+        'Action': {
+            headerShadow: '0px 5px 10px 0px rgb(255, 85, 0)',
+            footerShadow: '0px -5px 10px 1px rgb(255, 85, 0)', 
+            threadBorder: '3px solid rgb(255, 85, 0)',
+            gameContentBorder: '5px solid rgb(255, 85, 0)',
+            threadHoverShadow: '10px 10px 15px rgb(255, 85, 0)'
+        },
+        'Horror': {
+            headerShadow: '0px 5px 10px 0px rgb(255, 0, 0)',
+            footerShadow: '0px -5px 10px 1px rgb(255, 0, 0)', 
+            threadBorder: '3px solid rgb(255, 0, 0)',
+            gameContentBorder: '5px solid rgb(255, 0, 0)',
+            threadHoverShadow: '10px 10px 15px rgb(255, 0, 0)'
+        },
+        'Strategy': {
+            headerShadow: '0px 5px 10px 0px rgb(0, 0, 165)',
+            footerShadow: '0px -5px 10px 1px rgb(0, 0, 165)', 
+            threadBorder: '3px solid rgb(0, 0, 165)',
+            gameContentBorder: '5px solid rgb(0, 0, 165)',
+            threadHoverShadow: '10px 10px 15px rgb(0, 0, 165)'
+        },
+        'Adventure': {
+            headerShadow: '0px 5px 10px 0px rgb(0, 128, 0)',
+            footerShadow: '0px -5px 10px 1px rgb(0, 128, 0)', 
+            threadBorder: '3px solid rgb(0, 128, 0)',
+            gameContentBorder: '5px solid rgb(0, 128, 0)',
+            threadHoverShadow: '10px 10px 15px rgb(0, 128, 0)'
+        },
+        'Simulation': {
+            headerShadow: '0px 5px 10px 0px rgb(120, 0, 0)',
+            footerShadow: '0px -5px 10px 1px rgb(120, 0, 0)', 
+            threadBorder: '3px solid rgb(120, 0, 0)',
+            gameContentBorder: '5px solid rgb(120, 0, 0)',
+            threadHoverShadow: '10px 10px 15px rgb(120, 0, 0)'
+        },
+        'RPG': {
+            headerShadow: '0px 5px 10px 0px rgb(102, 0, 175)',
+            footerShadow: '0px -5px 10px 1px rgb(102, 0, 175)', 
+            threadBorder: '3px solid rgb(102, 0, 175)',
+            gameContentBorder: '5px solid rgb(102, 0, 175)',
+            threadHoverShadow: '10px 10px 15px rgb(102, 0, 175)'
+        },
+        'Sports/Racing': {
+            headerShadow: '0px 5px 10px 0px  rgb(0, 0, 255)',
+            footerShadow: '0px -5px 10px 1px  rgb(0, 0, 255)', 
+            threadBorder: '3px solid  rgb(0, 0, 255)',
+            gameContentBorder: '5px solid  rgb(0, 0, 255)',
+            threadHoverShadow: '10px 10px 15px  rgb(0, 0, 255)'
+        },
+        'default': {
+            headerShadow: '10px 10px 20px rgb(123, 123, 123)',
+            footerShadow: '0 -5px 10px 0 rgb(123, 123, 123)',
+            threadBorder: '1px solid rgb(123, 123, 123)',
+            gameContentBorder: '2px solid rgb(123, 123, 123)',
+            threadHoverShadow: '10px 10px 15px rgb(123, 123, 123)'
+        }
+    };
+
+    //implement style values based on genre
+    let styles = boxShadowValues[genre] || boxShadowValues['default'];
+
+    //header and footer styles (box-shadow)
+    document.querySelector('header').style.boxShadow = styles.headerShadow;
+    document.querySelector('footer').style.boxShadow = styles.footerShadow;
+
+    //thread and game-content border styles
+    document.querySelectorAll('.thread').forEach(thread => {
+        thread.style.border = styles.threadBorder;
+        //thread hover effect
+        thread.addEventListener('mouseenter', () => {
+            thread.style.boxShadow = styles.threadHoverShadow;
+        });
+        thread.addEventListener('mouseleave', () => {
+            thread.style.boxShadow = '';
+        });
+    });
+
+    document.querySelector('#game-content').style.border = styles.gameContentBorder;
+}
+
+//apply styles
+applyGenreStyles(gameToDisplay.genre);
+
 //-----------populate game image name rating and description--------------------//
 let gameImage = document.getElementById('game-image');
 gameImage.src = gameToDisplay.image;
