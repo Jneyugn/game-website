@@ -121,8 +121,9 @@ a.view-reply:hover {
 }
 
 #game-content img {
-    height: 100%;
+    height: 300px;
     width: 100%;
+    object-fit: fill;
 }
 
 #game-content p {
@@ -161,3 +162,18 @@ a.view-reply:hover {
 .thread:last-of-type {
     margin: auto auto 0 auto;
 }*/
+
+/*responsive sizing*/
+@media (max-width: 1150px) {
+    #game-content img {
+        height: 50%;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .game {
+        width: 200px;
+        height: 200px;
+    }
+}
