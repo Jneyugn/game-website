@@ -3,9 +3,12 @@
 
 
 ## 🚀 Purpose of the Project  
-This gaming website provides an engaging platform where users can play games, explore gaming content, and enjoy a visually appealing user experience. 
+The website is designed to cater to a general audience with an interest in gaming. Its primary goal is to provide a space where users can engage with others by seeking advice or offering tips on games they are currently playing. While similar to Reddit in its functionality, this platform will focus exclusively on gaming content, making it a go-to resource for gamers looking to connect, seek advice, or offer guidance on a wide variety of games. This specialized focus fosters a more targeted, community-driven environment, promoting both learning and engagement within the gaming community.
 
-- **Audience**: Casual gamers and fans of interactive web platforms.  
+
+- **Audience**: Our target audience includes anyone who loves games or is interested in gaming, from casual players exploring new titles to dedicated enthusiasts sharing strategies. 
+
+The platform welcomes individuals of all skill levels and fosters a community for those passionate about engaging with gaming content.
 
 ---
 
@@ -16,12 +19,24 @@ This gaming website provides an engaging platform where users can play games, ex
   ![Screenshot](images/Screenshot%202024-12-16%20190536.png)
   
 - 🎨 **Post Replies**: Users can engage with each other's content.
+
+![Screenshot](images/Screenshot%202024-12-16%20200129.png)
+
 - 🚀 **User Star Rating**: Users can rate posts using a star system.
+
+![Screenshot](images/stars.png)
+
 - 🔍 **Game Search & Filters**: Users can search for games or browse by categories.  
-- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices.  
+
+![Screenshot](images/nav.png)
+
+
 - 📝 **Create Account**: Users can create an account to personalize their experience.
   
   ![Create Account Screenshot](images/Screenshot%202024-12-16%20190608.png)
+
+
+  - 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices.  
 
 ---
 
