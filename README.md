@@ -67,6 +67,10 @@ The platform welcomes individuals of all skill levels and fosters a community fo
 Watch this [video](https://www.youtube.com/watch?v=rHYCLV1E5J0) for an overview of the project.
 
 ## 💻 Installation Instructions
+Before installing XP Exchange you need:
+- Git
+- Node.js >= 14.x 
+
 1. **Clone the repository**:
    Run the following command in your terminal to clone the repository to your local machine:
    ```bash
